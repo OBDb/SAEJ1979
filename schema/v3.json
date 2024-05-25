@@ -38,6 +38,7 @@
                     "max": { "type": "number" },
                     "add": { "type": "number" },
                     "mul": { "type": "number" },
+                    "div": { "type": "number" },
                     "unit": { "enum": [
                       "amps",
                       "ascii",
