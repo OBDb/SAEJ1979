@@ -26,14 +26,6 @@
     {"id": "O2S_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 26, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring ready"},
     {"id": "O2S_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 18, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring supported"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "02"}, "freq": 60,
-  "signals": [
-    {"id": "DTCFRZF", "path": "DTCs.Generic", "fmt": "hexBytes", "name": "DTC that caused required freeze frame data storage", "description": "0 indicates no freeze frame data."}
-  ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "03"}, "freq": 0.25,
-  "signals": [
-    {"id": "FUELSYS", "path": "Fuel.Generic", "fmt": "fuelSystemStatus", "name": "Fuel system status"}
-  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "04"}, "freq": 0.25,
   "signals": [
     {"id": "LOAD_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Calculated engine load", "description": "Represents the amount of work the engine is doing."}
