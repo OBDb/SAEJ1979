@@ -250,10 +250,6 @@
   "signals": [
     {"id": "MAX_MAF", "path": "Engine.Generic.Internal", "fmt": { "len": 8, "max": 2550, "mul": 10, "unit": "gramsPerSecond" }, "name": "Maximum value for air flow rate from mass air flow sensor"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "51"}, "freq": 1,
-  "signals": [
-    {"id": "FUEL_TYP", "path": "Engine.Generic", "fmt": "fuelType", "name": "Type of fuel currently being used by the vehicle"}
-  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "52"}, "freq": 1,
   "signals": [
     {"id": "ALCH_PCT", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Alcohol fuel percentage", "description": "Indicates the percentage of alcohol contained in ethanol or methanol fuels, if used. For example, ethanol fuel (E85) normally contains 85% ethanol, in which case this parameter will display 85%"}
