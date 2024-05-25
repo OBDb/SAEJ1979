@@ -26,6 +26,15 @@
     {"id": "O2S_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 26, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring ready"},
     {"id": "O2S_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 18, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring supported"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "02"}, "freq": 60,
+  "signals": [
+    {"id": "DTCFRZF", "path": "DTCs.Generic", "fmt": { "len": 16, "max": 65535, "unit": "hex" }, "name": "DTC that caused required freeze frame data storage", "description": "0 indicates no freeze frame data."}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "03"}, "freq": 0.25,
+  "signals": [
+    {"id": "FUELSYS1", "path": "Fuel.Generic", "fmt": {          "len": 8, "map": {"1":{"description":"Open loop - has not yet satisfied conditions to go closed loop","value":"OL"},"2":{"description":"Closed loop - using oxygen sensor(s) as feedback for fuel control","value":"CL"},"4":{"description":"Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)","value":"OL-Drive"},"8":{"description":"Open loop - due to detected system fault","value":"OL-Fault"},"16":{"description":"Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control","value":"CL-Fault"}} }, "name": "Fuel system 1 status"},
+    {"id": "FUELSYS2", "path": "Fuel.Generic", "fmt": {"bix": 8, "len": 8, "map": {"1":{"description":"Open loop - has not yet satisfied conditions to go closed loop","value":"OL"},"2":{"description":"Closed loop - using oxygen sensor(s) as feedback for fuel control","value":"CL"},"4":{"description":"Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)","value":"OL-Drive"},"8":{"description":"Open loop - due to detected system fault","value":"OL-Fault"},"16":{"description":"Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control","value":"CL-Fault"}} }, "name": "Fuel system 2 status"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "04"}, "freq": 0.25,
   "signals": [
     {"id": "LOAD_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Calculated engine load", "description": "Represents the amount of work the engine is doing."}
@@ -249,6 +258,10 @@
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "50"}, "freq": 60,
   "signals": [
     {"id": "MAX_MAF", "path": "Engine.Generic.Internal", "fmt": { "len": 8, "max": 2550, "mul": 10, "unit": "gramsPerSecond" }, "name": "Maximum value for air flow rate from mass air flow sensor"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "51"}, "freq": 1,
+  "signals": [
+    {"id": "FUEL_TYP", "path": "Engine.Generic", "fmt": {"bix": 5, "len": 3, "map": {"1":{"description":"Gasoline/petrol","value":"GAS"},"2":{"description":"Methanol","value":"METH"},"3":{"description":"Ethanol","value":"ETH"},"4":{"description":"Diesel","value":"DSL"},"5":{"description":"Liquefied petroleum gas","value":"LPG"},"6":{"description":"Compressed natural gas","value":"CNG"},"7":{"description":"Propane","value":"PROP"},"8":{"description":"Battery/electric","value":"ELEC"},"9":{"description":"Bi-fuel vehicle using gasoline/petrol","value":"BI_GAS"},"10":{"description":"Bi-fuel vehicle using methanol","value":"BI_METH"},"11":{"description":"Bi-fuel vehicle using ethanol","value":"BI_ETH"},"12":{"description":"Bi-fuel vehicle using LPG","value":"BI_LPG"},"13":{"description":"Bi-fuel vehicle using CNG","value":"BI_CNG"},"14":{"description":"Bi-fuel vehicle using propane","value":"BI_PROP"},"15":{"description":"Bi-fuel vehicle using battery","value":"BI_ELEC"}} }, "name": "Type of fuel currently being used by the vehicle"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "52"}, "freq": 1,
   "signals": [
