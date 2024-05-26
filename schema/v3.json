@@ -61,6 +61,7 @@
                       "kilopascal",
                       "kilovolts",
                       "kilowattHours",
+                      "kilowatts",
                       "liters",
                       "meters",
                       "metersPerSecond",
@@ -68,6 +69,7 @@
                       "milesPerHour",
                       "milliamps",
                       "millivolts",
+                      "milliwatts",
                       "minutes",
                       "normal",
                       "noyes",
@@ -79,6 +81,7 @@
                       "scalar",
                       "seconds",
                       "unknown",
+                      "watts",
                       "volts",
                       "yards",
                       "yesno"
