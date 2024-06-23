@@ -1,2 +1,2 @@
-# Model make
+# SAEJ1979 Standard PIDs
 
