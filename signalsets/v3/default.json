@@ -1,30 +1,31 @@
 { "commands": [
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "01"}, "freq": 10,
   "signals": [
-    {"id": "ACRF_RDY", "path": "DTCs.Generic.Status", "fmt": {"bix": 27, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "A/C system refrigerant monitoring ready"},
-    {"id": "ACRF_SUP", "path": "DTCs.Generic.Status", "fmt": {"bix": 19, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "A/C system refrigerant monitoring supported"},
-    {"id": "AIR_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 28, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Secondary air system monitoring ready"},
-    {"id": "AIR_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 20, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Secondary air system monitoring supported"},
-    {"id": "CAT_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 31, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Catalyst monitoring ready"},
-    {"id": "CAT_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 23, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Catalyst monitoring supported"},
-    {"id": "CCM_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 9,  "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Comprehensive component monitoring ready"},
-    {"id": "CCM_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 13, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Comprehensive component monitoring supported"},
-    {"id": "DTC_CNT",  "path": "DTCs.Generic",        "fmt": {"bix": 1,  "len": 7, "max": 127, "unit": "scalar" }, "name": "Number of DTCs stored in this ECU"},
-    {"id": "EGR_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 24, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "EGR system monitoring ready"},
-    {"id": "EGR_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 16, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "EGR system monitoring supported"},
-    {"id": "EVAP_RDY", "path": "DTCs.Generic.Status", "fmt": {"bix": 29, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Evaporative system monitoring ready"},
-    {"id": "EVAP_SUP", "path": "DTCs.Generic.Status", "fmt": {"bix": 21, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Evaporative system monitoring supported"},
-    {"id": "FUEL_RDY", "path": "DTCs.Generic.Status", "fmt": {"bix": 10, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Fuel system monitoring ready"},
-    {"id": "FUEL_SUP", "path": "DTCs.Generic.Status", "fmt": {"bix": 14, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Fuel system monitoring supported"},
-    {"id": "HCAT_RDY", "path": "DTCs.Generic.Status", "fmt": {"bix": 30, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Heated catalyst monitoring ready"},
-    {"id": "HCAT_SUP", "path": "DTCs.Generic.Status", "fmt": {"bix": 22, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Heated catalyst monitoring supported"},
-    {"id": "HTR_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 25, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor heater monitoring ready"},
-    {"id": "HTR_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 17, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor heater monitoring supported"},
-    {"id": "MIL",      "path": "DTCs.Generic",        "fmt": {           "len": 1, "max": 1,   "unit": "offon"  }, "name": "Malfunction indicator lamp",                   "description": "The MIL status is OFF during key-on, engine-off bulb check unless MIL has also been commanded ON for a detected malfunction. The status reflects whether there are confirmed DTC(s) stored that are illuminating the MIL. It should not reflect the status of the MIL, which could be on for a function check, flashing I/M readiness or flashing for misfire."},
-    {"id": "MIS_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 11, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Misfire monitoring ready"},
-    {"id": "MIS_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 15, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Misfire monitoring supported"},
-    {"id": "O2S_RDY",  "path": "DTCs.Generic.Status", "fmt": {"bix": 26, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring ready"},
-    {"id": "O2S_SUP",  "path": "DTCs.Generic.Status", "fmt": {"bix": 18, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring supported"}
+    {"id": "MIL",      "path": "DTCs.Generic",         "fmt": {           "len": 1, "max": 1,   "unit": "offon"  }, "name": "Malfunction indicator lamp",                   "description": "The MIL status is OFF during key-on, engine-off bulb check unless MIL has also been commanded ON for a detected malfunction. The status reflects whether there are confirmed DTC(s) stored that are illuminating the MIL. It should not reflect the status of the MIL, which could be on for a function check, flashing I/M readiness or flashing for misfire."},
+    {"id": "DTC_CNT",  "path": "DTCs.Generic",         "fmt": {"bix": 1,  "len": 7, "max": 127, "unit": "scalar" }, "name": "Number of DTCs stored in this ECU",            "description": "Number of confirmed emission-related DTCs stored in the ECU available for display using Service $03."},
+    {"id": "CCM_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 9,  "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Comprehensive component monitoring ready"},
+    {"id": "FUEL_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 10, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Fuel system monitoring ready"},
+    {"id": "MIS_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 11, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Misfire monitoring ready"},
+    {"id": "CCM_SUP",  "path": "DTCs.Generic.Support", "fmt": {"bix": 13, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Comprehensive component monitoring supported"},
+    {"id": "FUEL_SUP", "path": "DTCs.Generic.Support", "fmt": {"bix": 14, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Fuel system monitoring supported"},
+    {"id": "MIS_SUP",  "path": "DTCs.Generic.Support", "fmt": {"bix": 15, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Misfire monitoring supported"},
+    {"id": "EGR_SUP",  "path": "DTCs.Generic.Support", "fmt": {"bix": 16, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "EGR system monitoring supported"},
+    {"id": "HTR_SUP",  "path": "DTCs.Generic.Support", "fmt": {"bix": 17, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor heater monitoring supported"},
+    {"id": "O2S_SUP",  "path": "DTCs.Generic.Support", "fmt": {"bix": 18, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring supported"},
+    {"id": "ACRF_SUP", "path": "DTCs.Generic.Support", "fmt": {"bix": 19, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "A/C system refrigerant monitoring supported"},
+    {"id": "AIR_SUP",  "path": "DTCs.Generic.Support", "fmt": {"bix": 20, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Secondary air system monitoring supported"},
+    {"id": "EVAP_SUP", "path": "DTCs.Generic.Support", "fmt": {"bix": 21, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Evaporative system monitoring supported"},
+    {"id": "HCAT_SUP", "path": "DTCs.Generic.Support", "fmt": {"bix": 22, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Heated catalyst monitoring supported"},
+    {"id": "CAT_SUP",  "path": "DTCs.Generic.Support", "fmt": {"bix": 23, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Catalyst monitoring supported"},
+    {"id": "EGR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 24, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "EGR system monitoring ready"},
+    {"id": "HTR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 25, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor heater monitoring ready"},
+    {"id": "O2S_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 26, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring ready"},
+    {"id": "ACRF_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 27, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "A/C system refrigerant monitoring ready"},
+    {"id": "AIR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 28, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Secondary air system monitoring ready"},
+    {"id": "EVAP_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 29, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Evaporative system monitoring ready"},
+    {"id": "HCAT_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 30, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Heated catalyst monitoring ready"},
+    {"id": "CAT_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 31, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Catalyst monitoring ready"},
+    {"id": "CIM_SUP", "path": "DTCs.Generic.Support", "fmt": {"bix": 12, "len": 1, "map": {"0":{"description":"Spark ignition monitors supported","value":"SPARK"},"1":{"description":"Compression ignition monitors supported","value":"COMPRESSION"}} }, "name": "Compression ignition monitoring supported", "description": "Indicates support of spark ignition or compression ignition monitors.", "hidden": true}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "02"}, "freq": 60,
   "signals": [
@@ -32,12 +33,12 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "03"}, "freq": 0.25,
   "signals": [
-    {"id": "FUELSYS1", "path": "Fuel.Generic", "fmt": {          "len": 8, "map": {"1":{"description":"Open loop - has not yet satisfied conditions to go closed loop","value":"OL"},"2":{"description":"Closed loop - using oxygen sensor(s) as feedback for fuel control","value":"CL"},"4":{"description":"Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)","value":"OL-Drive"},"8":{"description":"Open loop - due to detected system fault","value":"OL-Fault"},"16":{"description":"Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control","value":"CL-Fault"}} }, "name": "Fuel system 1 status"},
-    {"id": "FUELSYS2", "path": "Fuel.Generic", "fmt": {"bix": 8, "len": 8, "map": {"1":{"description":"Open loop - has not yet satisfied conditions to go closed loop","value":"OL"},"2":{"description":"Closed loop - using oxygen sensor(s) as feedback for fuel control","value":"CL"},"4":{"description":"Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)","value":"OL-Drive"},"8":{"description":"Open loop - due to detected system fault","value":"OL-Fault"},"16":{"description":"Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control","value":"CL-Fault"}} }, "name": "Fuel system 2 status"}
+    {"id": "FUELSYS1", "path": "Fuel.Generic", "fmt": {          "len": 8, "map": {"1":{"description":"Open loop - has not yet satisfied conditions to go closed loop","value":"OL"},"2":{"description":"Closed loop - using oxygen sensor(s) as feedback for fuel control","value":"CL"},"4":{"description":"Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)","value":"OL-Drive"},"8":{"description":"Open loop - due to detected system fault","value":"OL-Fault"},"16":{"description":"Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control","value":"CL-Fault"},"32":{"description":"Open loop - has not yet satisfied conditions to go closed loop (Bank 2)","value":"OL B2"},"64":{"description":"Open loop due to driving conditions (Bank 2) (e.g. power enrichment, deceleration enleanment, cylinder deactivation)","value":"OL-Drive B2"},"128":{"description":"Open loop - due to detected system fault (Bank 2)","value":"OL-Fault B2"}} }, "name": "Fuel system 1 status"},
+    {"id": "FUELSYS2", "path": "Fuel.Generic", "fmt": {"bix": 8, "len": 8, "map": {"1":{"description":"Open loop - has not yet satisfied conditions to go closed loop","value":"OL"},"2":{"description":"Closed loop - using oxygen sensor(s) as feedback for fuel control","value":"CL"},"4":{"description":"Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)","value":"OL-Drive"},"8":{"description":"Open loop - due to detected system fault","value":"OL-Fault"},"16":{"description":"Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control","value":"CL-Fault"},"32":{"description":"Open loop - has not yet satisfied conditions to go closed loop (Bank 2)","value":"OL B2"},"64":{"description":"Open loop due to driving conditions (Bank 2) (e.g. power enrichment, deceleration enleanment, cylinder deactivation)","value":"OL-Drive B2"},"128":{"description":"Open loop - due to detected system fault (Bank 2)","value":"OL-Fault B2"}} }, "name": "Fuel system 2 status"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "04"}, "freq": 0.25,
   "signals": [
-    {"id": "LOAD_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Calculated engine load", "description": "Represents the amount of work the engine is doing."}
+    {"id": "LOAD_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Calculated engine load", "description": "Represents the amount of work the engine is doing."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "05"}, "freq": 0.5,
   "signals": [
@@ -45,27 +46,25 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "06"}, "freq": 0.25,
   "signals": [
-    {"id": "SHRTFT1", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 0.78125, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 1)", "description": "Correction being used by the closed-loop fuel algorithm."},
-    {"id": "SHRTFT3", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 0.78125, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 3)", "description": "Correction being used by the closed-loop fuel algorithm."}
+    {"id": "SHRTFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 1)", "description": "Correction being used by the closed-loop fuel algorithm."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "07"}, "freq": 1,
   "signals": [
-    {"id": "LONGFT1", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 0.78125, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 1)"},
-    {"id": "LONGFT3", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 0.78125, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 3)"}
+    {"id": "LONGFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "08"}, "freq": 1,
   "signals": [
-    {"id": "SHRTFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 0.78125, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 2)", "description": "Correction being used by the closed-loop fuel algorithm."},
-    {"id": "SHRTFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 0.78125, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 4)", "description": "Correction being used by the closed-loop fuel algorithm."}
+    {"id": "SHRTFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 2)", "description": "Correction being used by the closed-loop fuel algorithm."},
+    {"id": "SHRTFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 4)", "description": "Correction being used by the closed-loop fuel algorithm."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "09"}, "freq": 1,
   "signals": [
-    {"id": "LONGFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 0.78125, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 2)"},
-    {"id": "LONGFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 0.78125, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 4)"}
+    {"id": "LONGFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 2)"},
+    {"id": "LONGFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 4)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0A"}, "freq": 1,
   "signals": [
-    {"id": "FRP_GAUGE", "path": "Engine.Generic", "fmt": { "len": 8, "max": 765, "mul": 3, "unit": "kilopascal" }, "name": "Fuel pressure"}
+    {"id": "FP", "path": "Engine.Generic", "fmt": { "len": 8, "max": 765, "mul": 3, "unit": "kilopascal" }, "name": "Fuel pressure"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0B"}, "freq": 1,
   "signals": [
@@ -73,7 +72,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0C"}, "freq": 0.25,
   "signals": [
-    {"id": "RPM", "path": "Engine.Generic", "fmt": { "len": 16, "max": 16383.75, "mul": 0.25, "unit": "rpm" }, "name": "Engine RPM"}
+    {"id": "RPM", "path": "Engine.Generic", "fmt": { "len": 16, "max": 16383.75, "div": 4, "unit": "rpm" }, "name": "Engine RPM"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0D"}, "freq": 0.25,
   "signals": [
@@ -81,7 +80,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0E"}, "freq": 0.25,
   "signals": [
-    {"id": "SPARKADV", "path": "Engine.Generic", "fmt": { "len": 8, "max": 63.5, "min": -64, "mul": 0.5, "add": -64, "unit": "degrees" }, "name": "Timing advance", "description": "Ignition timing spark advance for the first cylinder. Measured in degrees before dead center. Minus is degrees before dead center, positive is degrees after."}
+    {"id": "SPARKADV", "path": "Engine.Generic", "fmt": { "len": 8, "max": 63.5, "min": -64, "div": 2, "add": -64, "unit": "degrees" }, "name": "Timing advance", "description": "Ignition timing spark advance for the first cylinder. Measured in degrees before dead center. Minus is degrees before dead center, positive is degrees after."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0F"}, "freq": 0.25,
   "signals": [
@@ -89,19 +88,19 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "10"}, "freq": 0.25,
   "signals": [
-    {"id": "MAF", "path": "Engine.Generic", "fmt": { "len": 16, "max": 655.35, "mul": 0.01, "unit": "gramsPerSecond" }, "name": "Air flow rate from mass air flow sensor"}
+    {"id": "MAF", "path": "Engine.Generic", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "gramsPerSecond" }, "name": "Air flow rate from mass air flow sensor"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "11"}, "freq": 0.25,
   "signals": [
-    {"id": "TP", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Absolute throttle position", "description": "Throttle position at idle will usually be more than 0%, and throttle position at wide open throttle will usually be less than 100%."}
+    {"id": "TP", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position", "description": "Throttle position at idle will usually be more than 0%, and throttle position at wide open throttle will usually be less than 100%."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "12"}, "freq": 60,
   "signals": [
-    {"id": "AIR_STAT", "path": "Engine.Generic", "fmt": {"bix": 5, "len": 3, "map": {"1":{"description":"Upstream of first catalytic converter","value":"UPS"},"2":{"description":"Downstream of first catalytic converter inlet","value":"DNS"},"4":{"description":"Atmosphere / off","value":"OFF"}} }, "name": "Commanded secondary air status"}
+    {"id": "AIR_STAT", "path": "Engine.Generic", "fmt": {"bix": 5, "len": 3, "map": {"1":{"description":"Upstream of first catalytic converter","value":"UPS"},"2":{"description":"Downstream of first catalytic converter inlet","value":"DNS"},"4":{"description":"Atmosphere / off","value":"OFF"},"8":{"description":"Pump commanded on for diagnostics","value":"DIAG"}} }, "name": "Commanded secondary air status"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "1C"}, "freq": 60,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "1C"}, "freq": 3600,
   "signals": [
-    {"id": "OBDSUP", "path": "OBD.Generic", "fmt": { "len": 8, "map": {"1":{"description":"OBD II (California ARB)","value":"OBD II"},"2":{"description":"OBD (Federal EPA)","value":"OBD"},"3":{"description":"OBD & OBD II","value":"OBD & OBD II"},"4":{"description":"OBD I","value":"OBD I"},"5":{"description":"Not OBD compliant","value":"NO OBD"},"6":{"description":"EOBD","value":"EOBD"},"7":{"description":"EOBD & OBD II","value":"EOBD & OBD II"},"8":{"description":"EOBD & OBD","value":"EOBD & OBD"},"9":{"description":"EOBD, OBD, OBD II","value":"EOBD, OBD, OBD II"},"10":{"description":"JOBD","value":"JOBD"},"11":{"description":"JOBD & OBD II","value":"JOBD & OBD II"},"12":{"description":"JOBD & EOBD","value":"JOBD & EOBD"},"13":{"description":"JOBD, EOBD, OBD II","value":"JOBD, EOBD, OBD II"},"14":{"description":"Heavy duty vehicles (EURO IV) B1","value":"EURO IV B1"},"15":{"description":"Heavy duty vehicles (EURO V) B2","value":"EURO V B2"},"16":{"description":"Heavy duty vehicles (EURO EEC) C (gas engines)","value":"EURO C"},"17":{"description":"Engine manufacturer diagnostics (EMD)","value":"EMD"}} }, "name": "OBD requirements to which vehicle is designed"}
+    {"id": "OBDSUP", "path": "OBD.Generic", "fmt": { "len": 8, "map": {"1":{"description":"OBD II (California ARB)","value":"OBD II"},"2":{"description":"OBD (Federal EPA)","value":"OBD"},"3":{"description":"OBD & OBD II","value":"OBD & OBD II"},"4":{"description":"OBD I","value":"OBD I"},"5":{"description":"Not OBD compliant","value":"NO OBD"},"6":{"description":"EOBD","value":"EOBD"},"7":{"description":"EOBD & OBD II","value":"EOBD & OBD II"},"8":{"description":"EOBD & OBD","value":"EOBD & OBD"},"9":{"description":"EOBD, OBD, OBD II","value":"EOBD, OBD, OBD II"},"10":{"description":"JOBD","value":"JOBD"},"11":{"description":"JOBD & OBD II","value":"JOBD & OBD II"},"12":{"description":"JOBD & EOBD","value":"JOBD & EOBD"},"13":{"description":"JOBD, EOBD, OBD II","value":"JOBD, EOBD, OBD II"},"14":{"description":"Heavy duty vehicles (EURO IV) B1","value":"EURO IV B1"},"15":{"description":"Heavy duty vehicles (EURO V) B2","value":"EURO V B2"},"16":{"description":"Heavy duty vehicles (EURO EEC) C (gas engines)","value":"EURO C"},"17":{"description":"Engine manufacturer diagnostics (EMD)","value":"EMD"},"18":{"description":"Engine Manufacturer Diagnostics Enhanced (EMD+)","value":"EMD+"},"19":{"description":"Heavy Duty On-Board Diagnostics (Child/Partial)","value":"HD OBD-C"},"20":{"description":"Heavy Duty On-Board Diagnostics","value":"HD OBD"},"21":{"description":"World Wide Harmonized OBD","value":"WWH OBD"},"23":{"description":"Heavy Duty Euro OBD Stage I without NOx Control","value":"HD EOBD-I"},"24":{"description":"Heavy Duty Euro OBD Stage I with NOx Control","value":"HD EOBD-I N"},"25":{"description":"Heavy Duty Euro OBD Stage II without NOx Control","value":"HD EOBD-II"},"26":{"description":"Heavy Duty Euro OBD Stage II with NOx Control","value":"HD EOBD-II N"},"27":{"description":"Heavy Duty ZEV","value":"HD-ZEV"},"28":{"description":"Brazil OBD Phase 1","value":"OBDBr-1"},"29":{"description":"Brazil OBD Phase 2 and Phase 2+","value":"OBDBr-2"},"30":{"description":"Korean OBD","value":"KOBD"},"31":{"description":"India BS4 OBD I","value":"IOBD-I-BS4"},"32":{"description":"India BS4 OBD II","value":"IOBD-II-BS4"},"33":{"description":"Euro VI","value":"HD EOBD-VI"},"34":{"description":"OBD, OBD II and HD OBD","value":"OBD, OBD II and HD OBD"},"35":{"description":"Brazil OBD Phase 3","value":"OBDBr-3"},"36":{"description":"Motorcycle, Euro OBD-I","value":"MC EOBD-I"},"37":{"description":"Motorcycle, Euro OBD-II","value":"MC EOBD-II"},"38":{"description":"Motorcycle, China OBD-I","value":"MC COBD-I"},"39":{"description":"Motorcycle, Taiwan OBD-I","value":"MC TOBD-I"},"40":{"description":"Motorcycle, Japan OBD-I","value":"MC JOBD-I"},"41":{"description":"China Nationwide Stage 6","value":"CN-OBD-6"},"42":{"description":"Brazil OBD Phase 7","value":"OBDBr-P7"},"43":{"description":"China Heavy Duty VI","value":"CN-HDOBD-VI"},"44":{"description":"India BS6 OBD I","value":"IOBD-I-BS6"},"45":{"description":"India BS6 OBD II","value":"IOBD-II-BS6"},"46":{"description":"India BSVI HD OBD","value":"IHDOBD-BSVI"},"47":{"description":"Brazil OBD Phase 8","value":"OBDBr-P8"},"48":{"description":"Japan Heavy Duty OBD-II","value":"HD-JOBD-II"},"49":{"description":"Korea Heavy Duty OBD-II","value":"HD-KOBD-II"},"50":{"description":"China Off-Road IV OBD","value":"CN-OROBD-IV"},"51":{"description":"Light Duty ZEV, ACC-II","value":"CARB ACC-II"},"52":{"description":"Motorcycle, Japan OBD-II","value":"MC JOBD-II"},"53":{"description":"Motorcycle, California (CARB) OBD","value":"MC CARB OBD"},"54":{"description":"Motorcycle, Federal (EPA) OBD","value":"MC EPA OBD"},"55":{"description":"Motorcycle, 50-State (CARB & EPA) OBD","value":"MC CARB & EPA OBD"},"56":{"description":"Heavy Duty ZEV, CARB ZEP","value":"HD ZEV CARB ZEP"},"57":{"description":"Light Duty ZEV, CARB ACC-II and EPA Tier 4 (GTR 22)","value":"CARB ACC-II & EPA TIER4"},"58":{"description":"Light Duty ZEV, EPA Tier 4 (GTR 22)","value":"EPA TIER4"},"59":{"description":"EPA HD OBD","value":"EPA HD"}} }, "name": "OBD requirements to which vehicle is designed"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "1E"}, "freq": 1,
   "signals": [
@@ -117,7 +116,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "22"}, "freq": 0.25,
   "signals": [
-    {"id": "FRP_REL", "path": "Engine.Generic", "fmt": { "len": 16, "max": 5177.27, "mul": 0.079, "unit": "kilopascal" }, "name": "Fuel rail pressure relative to manifold vacuum", "description": "Fuel rail pressure at the engine when the reading is referenced to manifold vacuum (relative pressure)."}
+    {"id": "FRP_REL", "path": "Engine.Generic", "fmt": { "len": 16, "max": 5177.27, "mul": 0.079, "unit": "kilopascal" }, "name": "Fuel pressure relative to manifold vacuum", "description": "Fuel rail pressure at the engine when the reading is referenced to manifold vacuum (relative pressure)."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "23"}, "freq": 0.25,
   "signals": [
@@ -125,31 +124,31 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2C"}, "freq": 1,
   "signals": [
-    {"id": "EGR_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Commanded EGR"}
+    {"id": "EGR_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Commanded EGR"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2D"}, "freq": 1,
   "signals": [
-    {"id": "EGR_ERR", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "EGR error"}
+    {"id": "EGR_ERR", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR error"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2E"}, "freq": 1,
   "signals": [
-    {"id": "EVAP_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Commanded evaporative purge"}
+    {"id": "EVAP_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Commanded evaporative purge"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2F"}, "freq": 1,
   "signals": [
-    {"id": "[Fuel.Generic] Fuel tank level", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Fuel tank level", "suggestedMetric": "fuelTankLevel"}
+    {"id": "FLI", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel tank level", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "30"}, "freq": 60,
   "signals": [
     {"id": "WARM_UPS", "path": "DTCs.Generic", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Number of warm-ups since diagnostic trouble codes cleared", "description": "Number of OBD warm-up cycles since all DTCs were cleared (via an external test equipment or possibly, a battery disconnect). A warm-up is defined in the OBD regulations to be sufficient vehicle operation such that coolant temperature rises by at least 22°C (40°F) from engine starting and reaches a minimum temperature of 70°C (160°F) (60°C (140°F) for diesels). This PID is not associated with any particular DTC. It is simply an indication for inspection/maintenance, of the last time an external test equipment was used to clear DTCs. If greater than 255 warm-ups have occurred, this parameter will remain at 255 and not wrap to zero."}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "31"}, "freq": 60,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "31"}, "freq": 15,
   "signals": [
     {"id": "CLR_DIST", "path": "DTCs.Generic", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance traveled since diagnostic trouble codes cleared", "description": "Distance accumulated since DTCs were cleared (via an external test equipment or possibly, a battery disconnect). This parameter is not associated with any particular DTC. It is simply an indication for inspection/maintenance, of the last time an external test equipment was used to clear DTCs. If greater than 65,535 km have occurred, will remain at 65,535 km and not wrap to zero."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "32"}, "freq": 0.25,
   "signals": [
-    {"id": "EVAP_VP", "path": "Engine.Generic", "fmt": { "len": 16, "max": 8191.75, "min": -8192, "mul": 0.000025, "sign": true, "unit": "kilopascal" }, "name": "Evap system vapor pressure", "description": "The pressure signal is normally obtained from a sensor located in the fuel tank or a sensor in an evaporative system vapor line."}
+    {"id": "EVAP_VP", "path": "Engine.Generic", "fmt": { "len": 16, "max": 8191.75, "min": -8192, "div": 4000, "sign": true, "unit": "kilopascal" }, "name": "Evap system vapor pressure", "description": "The pressure signal is normally obtained from a sensor located in the fuel tank or a sensor in an evaporative system vapor line."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "33"}, "freq": 0.25,
   "signals": [
@@ -157,60 +156,61 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "3C"}, "freq": 0.25,
   "signals": [
-    {"id": "CATEMP11", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "mul": 0.1, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 1, sensor 1"}
+    {"id": "CATEMP11", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 1, sensor 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "3D"}, "freq": 0.25,
   "signals": [
-    {"id": "CATEMP21", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "mul": 0.1, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 2, sensor 1"}
+    {"id": "CATEMP21", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 2, sensor 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "3E"}, "freq": 0.25,
   "signals": [
-    {"id": "CATEMP12", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "mul": 0.1, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 1, sensor 2"}
+    {"id": "CATEMP12", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 1, sensor 2"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "3F"}, "freq": 0.25,
   "signals": [
-    {"id": "CATEMP22", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "mul": 0.1, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 2, sensor 2"}
+    {"id": "CATEMP22", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 2, sensor 2"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "41"}, "freq": 1,
   "signals": [
-    {"id": "ACRFCMPL",  "path": "Monitors.Generic", "fmt": {"bix": 27, "len": 1, "max": 1, "unit": "yesno" }, "name": "A/C system refrigerant monitoring completed"},
-    {"id": "ACRF_ENA",  "path": "Monitors.Generic", "fmt": {"bix": 19, "len": 1, "max": 1, "unit": "noyes" }, "name": "A/C system refrigerant monitoring"},
-    {"id": "AIR_CMPL",  "path": "Monitors.Generic", "fmt": {"bix": 28, "len": 1, "max": 1, "unit": "yesno" }, "name": "Secondary air system monitoring completed"},
-    {"id": "AIR_ENA",   "path": "Monitors.Generic", "fmt": {"bix": 20, "len": 1, "max": 1, "unit": "noyes" }, "name": "Secondary air system monitoring"},
-    {"id": "CAT_CMPL",  "path": "Monitors.Generic", "fmt": {"bix": 31, "len": 1, "max": 1, "unit": "yesno" }, "name": "Catalyst monitoring completed"},
-    {"id": "CAT_ENA",   "path": "Monitors.Generic", "fmt": {"bix": 23, "len": 1, "max": 1, "unit": "noyes" }, "name": "Catalyst monitoring"},
-    {"id": "CCM_CMPL",  "path": "Monitors.Generic", "fmt": {"bix": 9,  "len": 1, "max": 1, "unit": "yesno" }, "name": "Comprehensive component monitoring completed"},
-    {"id": "CCM_ENA",   "path": "Monitors.Generic", "fmt": {"bix": 13, "len": 1, "max": 1, "unit": "noyes" }, "name": "Comprehensive component monitoring enabled"},
-    {"id": "EGR_CMPL",  "path": "Monitors.Generic", "fmt": {"bix": 24, "len": 1, "max": 1, "unit": "yesno" }, "name": "EGR system monitoring completed"},
-    {"id": "EGR_ENA",   "path": "Monitors.Generic", "fmt": {"bix": 16, "len": 1, "max": 1, "unit": "noyes" }, "name": "EGR system monitoring"},
-    {"id": "EVAPCMPL",  "path": "Monitors.Generic", "fmt": {"bix": 29, "len": 1, "max": 1, "unit": "yesno" }, "name": "Evaporative system monitoring completed"},
-    {"id": "EVAP_ENA",  "path": "Monitors.Generic", "fmt": {"bix": 21, "len": 1, "max": 1, "unit": "noyes" }, "name": "Evaporative system monitoring"},
-    {"id": "FUEL_CMPL", "path": "Monitors.Generic", "fmt": {"bix": 10, "len": 1, "max": 1, "unit": "yesno" }, "name": "Fuel system monitoring completed"},
-    {"id": "FUEL_ENA",  "path": "Monitors.Generic", "fmt": {"bix": 14, "len": 1, "max": 1, "unit": "noyes" }, "name": "Fuel system monitoring enabled"},
-    {"id": "HCATCMPL",  "path": "Monitors.Generic", "fmt": {"bix": 30, "len": 1, "max": 1, "unit": "yesno" }, "name": "Heated catalyst monitoring completed"},
-    {"id": "HCAT_ENA",  "path": "Monitors.Generic", "fmt": {"bix": 22, "len": 1, "max": 1, "unit": "noyes" }, "name": "Heated catalyst monitoring"},
-    {"id": "HTR_CMPL",  "path": "Monitors.Generic", "fmt": {"bix": 25, "len": 1, "max": 1, "unit": "yesno" }, "name": "Oxygen sensor heater monitoring completed"},
-    {"id": "HTR_ENA",   "path": "Monitors.Generic", "fmt": {"bix": 17, "len": 1, "max": 1, "unit": "noyes" }, "name": "Oxygen sensor heater monitoring"},
-    {"id": "MIS_CMPL",  "path": "Monitors.Generic", "fmt": {"bix": 11, "len": 1, "max": 1, "unit": "yesno" }, "name": "Misfire monitoring completed"},
-    {"id": "MIS_ENA",   "path": "Monitors.Generic", "fmt": {"bix": 15, "len": 1, "max": 1, "unit": "noyes" }, "name": "Misfire monitoring enabled"},
-    {"id": "O2S_CMPL",  "path": "Monitors.Generic", "fmt": {"bix": 26, "len": 1, "max": 1, "unit": "yesno" }, "name": "Oxygen sensor monitoring completed"},
-    {"id": "O2S_ENA",   "path": "Monitors.Generic", "fmt": {"bix": 18, "len": 1, "max": 1, "unit": "noyes" }, "name": "Oxygen sensor monitoring"}
+    {"id": "CCM_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 9,  "len": 1, "max": 1, "unit": "yesno" }, "name": "Comprehensive component monitoring completed"},
+    {"id": "FUEL_CMPL", "path": "DTCs.Generic.Status",  "fmt": {"bix": 10, "len": 1, "max": 1, "unit": "yesno" }, "name": "Fuel system monitoring completed"},
+    {"id": "MIS_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 11, "len": 1, "max": 1, "unit": "yesno" }, "name": "Misfire monitoring completed"},
+    {"id": "CCM_ENA",   "path": "DTCs.Generic.Support", "fmt": {"bix": 13, "len": 1, "max": 1, "unit": "noyes" }, "name": "Comprehensive component monitoring enabled"},
+    {"id": "FUEL_ENA",  "path": "DTCs.Generic.Support", "fmt": {"bix": 14, "len": 1, "max": 1, "unit": "noyes" }, "name": "Fuel system monitoring enabled"},
+    {"id": "MIS_ENA",   "path": "DTCs.Generic.Support", "fmt": {"bix": 15, "len": 1, "max": 1, "unit": "noyes" }, "name": "Misfire monitoring enabled"},
+    {"id": "EGR_ENA",   "path": "DTCs.Generic.Status",  "fmt": {"bix": 16, "len": 1, "max": 1, "unit": "noyes" }, "name": "EGR system monitoring"},
+    {"id": "HTR_ENA",   "path": "DTCs.Generic.Status",  "fmt": {"bix": 17, "len": 1, "max": 1, "unit": "noyes" }, "name": "Oxygen sensor heater monitoring"},
+    {"id": "O2S_ENA",   "path": "DTCs.Generic.Status",  "fmt": {"bix": 18, "len": 1, "max": 1, "unit": "noyes" }, "name": "Oxygen sensor monitoring"},
+    {"id": "ACRF_ENA",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 19, "len": 1, "max": 1, "unit": "noyes" }, "name": "A/C system refrigerant monitoring"},
+    {"id": "AIR_ENA",   "path": "DTCs.Generic.Status",  "fmt": {"bix": 20, "len": 1, "max": 1, "unit": "noyes" }, "name": "Secondary air system monitoring"},
+    {"id": "EVAP_ENA",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 21, "len": 1, "max": 1, "unit": "noyes" }, "name": "Evaporative system monitoring"},
+    {"id": "HCAT_ENA",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 22, "len": 1, "max": 1, "unit": "noyes" }, "name": "Heated catalyst monitoring"},
+    {"id": "CAT_ENA",   "path": "DTCs.Generic.Status",  "fmt": {"bix": 23, "len": 1, "max": 1, "unit": "noyes" }, "name": "Catalyst monitoring"},
+    {"id": "EGR_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 24, "len": 1, "max": 1, "unit": "yesno" }, "name": "EGR system monitoring completed"},
+    {"id": "HTR_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 25, "len": 1, "max": 1, "unit": "yesno" }, "name": "Oxygen sensor heater monitoring completed"},
+    {"id": "O2S_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 26, "len": 1, "max": 1, "unit": "yesno" }, "name": "Oxygen sensor monitoring completed"},
+    {"id": "ACRFCMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 27, "len": 1, "max": 1, "unit": "yesno" }, "name": "A/C system refrigerant monitoring completed"},
+    {"id": "AIR_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 28, "len": 1, "max": 1, "unit": "yesno" }, "name": "Secondary air system monitoring completed"},
+    {"id": "EVAPCMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 29, "len": 1, "max": 1, "unit": "yesno" }, "name": "Evaporative system monitoring completed"},
+    {"id": "HCATCMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 30, "len": 1, "max": 1, "unit": "yesno" }, "name": "Heated catalyst monitoring completed"},
+    {"id": "CAT_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 31, "len": 1, "max": 1, "unit": "yesno" }, "name": "Catalyst monitoring completed"},
+    {"id": "CIM_SUP_FLAG", "path": "DTCs.Generic.Support", "fmt": {"bix": 12, "len": 1, "map": {"0":{"description":"Spark ignition monitors supported","value":"SPARK"},"1":{"description":"Compression ignition monitors supported","value":"COMPRESSION"}} }, "name": "Compression ignition monitoring supported", "hidden": true}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "42"}, "freq": 0.25,
   "signals": [
-    {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "mul": 0.001, "unit": "volts" }, "name": "Control module voltage"}
+    {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "description": "Oower input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "43"}, "freq": 0.25,
   "signals": [
-    {"id": "LOAD_ABS", "path": "Engine.Generic", "fmt": { "len": 16, "max": 25700, "mul": 0.3921568627, "unit": "percent" }, "name": "Absolute load value"}
+    {"id": "LOAD_ABS", "path": "Engine.Generic", "fmt": { "len": 16, "max": 25700, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute load value"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "44"}, "freq": 0.25,
   "signals": [
-    {"id": "EQ_RAT", "path": "Engine.Generic", "fmt": { "len": 16, "max": 1.999, "mul": 0.000030518, "unit": "scalar" }, "name": "Commanded equivalence ratio", "description": "Fuel systems that utilize conventional oxygen sensor display the inverse of the commanded open loop equivalence ratio (also known as lambda) while the fuel control system is in open loop. Will indicate 1.000 while in closed-loop fuel."}
+    {"id": "EQ_RAT", "path": "Engine.Generic", "fmt": { "len": 16, "max": 1.99, "mul": 2, "div": 65535, "unit": "scalar" }, "name": "Commanded equivalence ratio", "description": "Fuel systems that utilize conventional oxygen sensor display the inverse of the commanded open loop equivalence ratio (also known as lambda) while the fuel control system is in open loop. Will indicate 1.000 while in closed-loop fuel."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "45"}, "freq": 0.25,
   "signals": [
-    {"id": "TP_R", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Relative throttle position", "description": "Relative or “learned” throttle position."}
+    {"id": "TP_R", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Relative throttle position", "description": "Relative or 'learned' throttle position."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "46"}, "freq": 0.25,
   "signals": [
@@ -218,82 +218,78 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "47"}, "freq": 0.25,
   "signals": [
-    {"id": "TP_B", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Absolute throttle position B"}
+    {"id": "TP_B", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position B"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "48"}, "freq": 0.25,
   "signals": [
-    {"id": "TP_C", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Absolute throttle position C"}
+    {"id": "TP_C", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position C"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "49"}, "freq": 0.25,
   "signals": [
-    {"id": "APP_D", "path": "Control.Pedals.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Accelerator pedal position D"}
+    {"id": "APP_D", "path": "Control.Pedals.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal position D"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4A"}, "freq": 0.25,
   "signals": [
-    {"id": "APP_E", "path": "Control.Pedals.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Accelerator pedal position E"}
+    {"id": "APP_E", "path": "Control.Pedals.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal position E"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4B"}, "freq": 0.25,
   "signals": [
-    {"id": "APP_F", "path": "Control.Pedals.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Accelerator pedal position F"}
+    {"id": "APP_F", "path": "Control.Pedals.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal position F"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4C"}, "freq": 0.25,
   "signals": [
-    {"id": "TAC_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Commanded throttle actuator control"}
+    {"id": "TAC_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Commanded throttle actuator control"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4D"}, "freq": 0.25,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4D"}, "freq": 60,
   "signals": [
     {"id": "MIL_TIME", "path": "DTCs.Generic", "fmt": { "len": 16, "max": 65535, "unit": "minutes" }, "name": "Time run by the engine while MIL was activated", "description": "Resets to zero when MIL changes from deactivated to activated, if diagnostic information is cleared, or if at least 40 warm-up cycles occur without MIL being activated."}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4E"}, "freq": 0.25,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4E"}, "freq": 60,
   "signals": [
     {"id": "CLR_TIME", "path": "DTCs.Generic", "fmt": { "len": 16, "max": 65535, "unit": "minutes" }, "name": "Engine run time since diagnostic trouble codes cleared", "description": "Time accumulated since DTCs were cleared (via an external test equipment or possibly, a battery disconnect). This parameter is not associated with any particular DTC. It is simply an indication for inspection/maintenance, of the last time an external test equipment was used to clear DTCs. If greater than 65,535 km have occurred, will remain at 65,535 minutes and not wrap to zero."}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4F"}, "freq": 60,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "4F"}, "freq": 3600,
   "signals": [
-    {"id": "MAX_EQ_RAT",  "path": "Engine.Generic.Internal", "fmt": {           "len": 8, "max": 255,             "unit": "scalar"     }, "name": "Maximum value for equivalence ratio"},
-    {"id": "MAX_MAP",     "path": "Engine.Generic.Internal", "fmt": {"bix": 24, "len": 8, "max": 2550, "mul": 10, "unit": "kilopascal" }, "name": "Maximum value for intake manifold absolute pressure (MAP)"},
-    {"id": "MAX_O2_CURR", "path": "Engine.Generic.Internal", "fmt": {"bix": 16, "len": 8, "max": 255,             "unit": "milliamps"  }, "name": "Maximum value for oxygen sensor current"},
-    {"id": "MAX_O2_VOLT", "path": "Engine.Generic.Internal", "fmt": {"bix": 8,  "len": 8, "max": 255,             "unit": "volts"      }, "name": "Maximum value for oxygen sensor voltage"}
+    {"id": "MAX_EQ_RAT",  "path": "Engine.Generic.Internal", "fmt": {           "len": 8, "max": 255,             "unit": "scalar"     }, "name": "Maximum value for equivalence ratio",                       "hidden": true},
+    {"id": "MAX_O2_VOLT", "path": "Engine.Generic.Internal", "fmt": {"bix": 8,  "len": 8, "max": 255,             "unit": "volts"      }, "name": "Maximum value for oxygen sensor voltage",                   "hidden": true},
+    {"id": "MAX_O2_CURR", "path": "Engine.Generic.Internal", "fmt": {"bix": 16, "len": 8, "max": 255,             "unit": "milliamps"  }, "name": "Maximum value for oxygen sensor current",                   "hidden": true},
+    {"id": "MAX_MAP",     "path": "Engine.Generic.Internal", "fmt": {"bix": 24, "len": 8, "max": 2550, "mul": 10, "unit": "kilopascal" }, "name": "Maximum value for intake manifold absolute pressure (MAP)", "hidden": true}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "50"}, "freq": 60,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "50"}, "freq": 3600,
   "signals": [
-    {"id": "MAX_MAF", "path": "Engine.Generic.Internal", "fmt": { "len": 8, "max": 2550, "mul": 10, "unit": "gramsPerSecond" }, "name": "Maximum value for air flow rate from mass air flow sensor"}
+    {"id": "MAX_MAF", "path": "Engine.Generic.Internal", "fmt": { "len": 8, "max": 2550, "mul": 10, "unit": "gramsPerSecond" }, "name": "Maximum value for air flow rate from mass air flow sensor", "hidden": true}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "51"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "51"}, "freq": 0.25,
   "signals": [
-    {"id": "FUEL_TYP", "path": "Engine.Generic", "fmt": {"bix": 5, "len": 3, "map": {"1":{"description":"Gasoline/petrol","value":"GAS"},"2":{"description":"Methanol","value":"METH"},"3":{"description":"Ethanol","value":"ETH"},"4":{"description":"Diesel","value":"DSL"},"5":{"description":"Liquefied petroleum gas","value":"LPG"},"6":{"description":"Compressed natural gas","value":"CNG"},"7":{"description":"Propane","value":"PROP"},"8":{"description":"Battery/electric","value":"ELEC"},"9":{"description":"Bi-fuel vehicle using gasoline/petrol","value":"BI_GAS"},"10":{"description":"Bi-fuel vehicle using methanol","value":"BI_METH"},"11":{"description":"Bi-fuel vehicle using ethanol","value":"BI_ETH"},"12":{"description":"Bi-fuel vehicle using LPG","value":"BI_LPG"},"13":{"description":"Bi-fuel vehicle using CNG","value":"BI_CNG"},"14":{"description":"Bi-fuel vehicle using propane","value":"BI_PROP"},"15":{"description":"Bi-fuel vehicle using battery","value":"BI_ELEC"}} }, "name": "Type of fuel currently being used by the vehicle"}
+    {"id": "FUEL_TYP", "path": "Engine.Generic", "fmt": {"bix": 5, "len": 3, "map": {"1":{"description":"Gasoline/petrol","value":"GAS"},"2":{"description":"Methanol","value":"METH"},"3":{"description":"Ethanol","value":"ETH"},"4":{"description":"Diesel","value":"DSL"},"5":{"description":"Liquefied petroleum gas","value":"LPG"},"6":{"description":"Compressed natural gas","value":"CNG"},"7":{"description":"Propane","value":"PROP"},"8":{"description":"Battery/electric","value":"ELEC"},"9":{"description":"Bi-fuel vehicle using gasoline/petrol","value":"BI_GAS"},"10":{"description":"Bi-fuel vehicle using methanol","value":"BI_METH"},"11":{"description":"Bi-fuel vehicle using ethanol","value":"BI_ETH"},"12":{"description":"Bi-fuel vehicle using LPG","value":"BI_LPG"},"13":{"description":"Bi-fuel vehicle using CNG","value":"BI_CNG"},"14":{"description":"Bi-fuel vehicle using propane","value":"BI_PROP"},"15":{"description":"Bi-fuel vehicle using battery","value":"BI_ELEC"},"16":{"description":"Bi-fuel vehicle using battery and combustion engine for propulsion","value":"BI_MIX"},"17":{"description":"Hybrid vehicle using gasoline engine for propulsion","value":"HYB_GAS"},"18":{"description":"Hybrid vehicle using gasoline engine on ethanol for propulsion","value":"HYB_ETH"},"19":{"description":"Hybrid vehicle using diesel engine for propulsion","value":"HYB_DSL"},"20":{"description":"Hybrid vehicle using battery for propulsion","value":"HYB_ELEC"},"21":{"description":"Hybrid vehicle using battery and combustion engine for propulsion","value":"HYB_MIX"},"22":{"description":"Hybrid vehicle in regeneration mode","value":"HYB_REG"},"23":{"description":"Bi-fuel vehicle using diesel","value":"BI_DSL"},"24":{"description":"Bi-fuel vehicle using natural gas","value":"BI_NG"},"25":{"description":"Bi-fuel vehicle using diesel","value":"BI_DSL"},"26":{"description":"Natural gas","value":"NG"},"27":{"description":"Dual fuel vehicle using diesel and CNG","value":"DSL_CNG"},"28":{"description":"Dual fuel vehicle using diesel and LNG","value":"DSL_LNG"},"29":{"description":"Fuel cell utilizing hydrogen","value":"FC_H2"},"30":{"description":"Hydrogen Internal Combustion Engine","value":"HICE_HHO"},"31":{"description":"Kerosene","value":"KERO"},"32":{"description":"Heavy Fuel Oil","value":"HFO"}} }, "name": "Type of fuel currently being used by the vehicle"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "52"}, "freq": 1,
   "signals": [
-    {"id": "ALCH_PCT", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Alcohol fuel percentage", "description": "Indicates the percentage of alcohol contained in ethanol or methanol fuels, if used. For example, ethanol fuel (E85) normally contains 85% ethanol, in which case this parameter will display 85%"}
+    {"id": "ALCH_PCT", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Alcohol fuel percentage", "description": "Indicates the percentage of alcohol contained in ethanol or methanol fuels, if used. For example, ethanol fuel (E85) normally contains 85% ethanol, in which case this parameter will display 85%"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "53"}, "freq": 1,
   "signals": [
-    {"id": "EVAP_VPA", "path": "Engine.Generic", "fmt": { "len": 16, "max": 327.675, "mul": 0.005, "unit": "kilopascal" }, "name": "Absolute evap system vapor pressure", "description": "Normally obtained from a sensor located in the fuel tank or a sensor in an evaporative system vapor line."}
+    {"id": "EVAP_VPA", "path": "Engine.Generic", "fmt": { "len": 16, "max": 327.675, "div": 200, "unit": "kilopascal" }, "name": "Absolute evap system vapor pressure", "description": "Normally obtained from a sensor located in the fuel tank or a sensor in an evaporative system vapor line."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "54"}, "freq": 0.25,
   "signals": [
-    {"id": "EVAP_VP_WIDE", "path": "Engine.Generic", "fmt": { "len": 16, "max": 32768, "min": -32767, "mul": 0.0001, "sign": true, "unit": "kilopascal" }, "name": "Evap system vapor pressure (wide)", "description": "The pressure signal is normally obtained from a sensor located in the fuel tank or a sensor in an evaporative system vapor line."}
+    {"id": "EVAP_VP_WIDE", "path": "Engine.Generic", "fmt": { "len": 16, "max": 32768, "min": -32767, "div": 1000, "sign": true, "unit": "kilopascal" }, "name": "Evap system vapor pressure (wide)", "description": "The pressure signal is normally obtained from a sensor located in the fuel tank or a sensor in an evaporative system vapor line."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "55"}, "freq": 0.25,
   "signals": [
-    {"id": "STSO2FT1", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 1)"},
-    {"id": "STSO2FT3", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 3)"}
+    {"id": "STSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "56"}, "freq": 0.25,
   "signals": [
-    {"id": "LGSO2FT1", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 1)"},
-    {"id": "LGSO2FT3", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 3)"}
+    {"id": "LGSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "57"}, "freq": 0.25,
   "signals": [
-    {"id": "STSO2FT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 2)"},
-    {"id": "STSO2FT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 4)"}
+    {"id": "STSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 2)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "58"}, "freq": 0.25,
   "signals": [
-    {"id": "LGSO2FT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 2)"},
-    {"id": "LGSO2FT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 0.78125, "add": -128, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 4)"}
+    {"id": "LGSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 2)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "59"}, "freq": 0.25,
   "signals": [
@@ -301,11 +297,11 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5A"}, "freq": 0.25,
   "signals": [
-    {"id": "APP_R", "path": "Control.Pedals.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Accelerator pedal position (relative)"}
+    {"id": "APP_R", "path": "Control.Pedals.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal position (relative)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5B"}, "freq": 1,
   "signals": [
-    {"id": "BAT_PWR", "path": "Battery.Generic", "fmt": { "len": 8, "max": 100, "mul": 0.3921568627, "unit": "percent" }, "name": "Hybrid battery pack remaining life"}
+    {"id": "BAT_PWR", "path": "Battery.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Hybrid battery pack remaining life"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5C"}, "freq": 1,
   "signals": [
@@ -313,38 +309,95 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5D"}, "freq": 0.25,
   "signals": [
-    {"id": "FUEL_TIMING", "path": "Engine.Generic", "fmt": { "len": 16, "max": 301.992, "min": -210, "mul": 0.0078125, "add": -38665, "unit": "degrees" }, "name": "Fuel injection timing", "description": "Start of main fuel injection relative to Top Dead Center (TDC). Positive degrees indicate before TDC, negative degrees indicate after TDC."}
+    {"id": "FUEL_TIMING", "path": "Engine.Generic", "fmt": { "len": 16, "max": 301.992, "min": -210, "div": 128, "add": -38665, "unit": "degrees" }, "name": "Fuel injection timing", "description": "Start of main fuel injection relative to Top Dead Center (TDC). Positive degrees indicate before TDC, negative degrees indicate after TDC."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5E"}, "freq": 0.25,
   "signals": [
-    {"id": "FUEL_RATE", "path": "Fuel.Generic", "fmt": { "len": 16, "max": 3212.75, "mul": 0.05, "unit": "liters" }, "name": "Engine fuel rate", "description": "Measured in units per hour"}
+    {"id": "FUEL_RATE", "path": "Fuel.Generic", "fmt": { "len": 16, "max": 3212.75, "div": 20, "unit": "liters" }, "name": "Engine fuel rate", "description": "Measured in units per hour"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5F"}, "freq": 60,
   "signals": [
-    {"id": "EMIS_SUP", "path": "Emissions.Generic", "fmt": { "len": 8, "map": {"14":{"description":"Heavy duty vehicles (EURO IV) B1","value":"EURO IV B1"},"15":{"description":"Heavy duty vehicles (EURO V) B2","value":"EURO V B2"},"16":{"description":"Heavy duty vehicles (EURO EEV) C","value":"EURO C"}} }, "name": "Emission requirements to which vehicle is designed"}
+    {"id": "EMIS_SUP", "path": "Emissions.Generic", "fmt": { "len": 8, "map": {"14":{"description":"Heavy duty vehicles (EURO IV) B1","value":"EURO IV B1"},"15":{"description":"Heavy duty vehicles (EURO V) B2","value":"EURO V B2"},"16":{"description":"Heavy duty vehicles (EURO EEV) C","value":"EURO C"},"17":{"description":"Heavy Duty Vehicles (Euro VI)","value":"EURO VI"}} }, "name": "Emission requirements to which vehicle is designed"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "61"}, "freq": 0.25,
   "signals": [
-    {"id": "TQ_DD", "path": "Engine.Generic", "fmt": { "len": 8, "max": 125, "min": -125, "add": -125, "unit": "percent" }, "name": "Driver's demand engine torque"}
+    {"id": "TQ_DD", "path": "Engine.Generic", "fmt": { "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Driver's demand engine torque"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "62"}, "freq": 0.25,
   "signals": [
-    {"id": "TQ_ACT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 125, "min": -125, "add": -125, "unit": "percent" }, "name": "Actual engine torque"}
+    {"id": "TQ_ACT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Actual engine torque"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "63"}, "freq": 0.25,
+  "signals": [
+    {"id": "TQ_REF", "path": "Engine.Generic", "fmt": { "len": 16, "max": 65535, "unit": "joules" }, "name": "Engine reference torque"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "64"}, "freq": 3600,
+  "signals": [
+    {"id": "TQ_MAX1", "path": "Engine.Generic.Internal", "fmt": {           "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Engine Percent Torque At Idle, Point 1", "hidden": true},
+    {"id": "TQ_MAX2", "path": "Engine.Generic.Internal", "fmt": {"bix": 8,  "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Engine Percent Torque At Point 2",       "hidden": true},
+    {"id": "TQ_MAX3", "path": "Engine.Generic.Internal", "fmt": {"bix": 16, "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Engine Percent Torque At Point 3",       "hidden": true},
+    {"id": "TQ_MAX4", "path": "Engine.Generic.Internal", "fmt": {"bix": 24, "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Engine Percent Torque At Point 4",       "hidden": true},
+    {"id": "TQ_MAX5", "path": "Engine.Generic.Internal", "fmt": {"bix": 32, "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Engine Percent Torque At Point 5",       "hidden": true}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "65"}, "freq": 0.25,
+  "signals": [
+    {"id": "GEAR_SUP",  "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Recommended gear supported",                   "hidden": true},
+    {"id": "GPL_SUP",   "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Glow plug lamp status supported",              "hidden": true},
+    {"id": "N/G_SUP",   "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Manual trans neutral gear status supported",   "hidden": true},
+    {"id": "N/D_SUP",   "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Auto trans neutral drive status supported",    "hidden": true},
+    {"id": "PTO_SUP",   "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Power Take Off (PTO) output status supported", "hidden": true},
+    {"id": "GEAR_RCMD", "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 8,  "len": 4, "max": 15, "unit": "noyes" }, "name": "Recommended gear"},
+    {"id": "GPL_STAT",  "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 12, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Glow plug lamp status"},
+    {"id": "N/G_STAT",  "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 13, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Manual Trans Neutral Gear Status"},
+    {"id": "N/D_STAT",  "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 14, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Auto Trans Neutral Drive Status"},
+    {"id": "PTO_STAT",  "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 15, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Power Take Off (PTO) Output Status"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "66"}, "freq": 0.25,
+  "signals": [
+    {"id": "MAFB_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1,  "max": 1,                     "unit": "noyes"          }, "name": "MAF Sensor B supported", "hidden": true},
+    {"id": "MAFA_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1,  "max": 1,                     "unit": "noyes"          }, "name": "MAF Sensor A supported", "hidden": true},
+    {"id": "MAFA",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 16, "max": 2047.96875, "div": 32, "unit": "gramsPerSecond" }, "name": "Mass Air Flow Sensor A"},
+    {"id": "MAFB",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "gramsPerSecond" }, "name": "Mass Air Flow Sensor B"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "67"}, "freq": 0.5,
   "signals": [
-    {"id": "ECT 1",  "path": "Engine.Generic", "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 1"},
-    {"id": "ECT 1?", "path": "Engine.Generic", "fmt": {           "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 1 supported?"},
-    {"id": "ECT 2",  "path": "Engine.Generic", "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 2"},
-    {"id": "ECT 2?", "path": "Engine.Generic", "fmt": {"bix": 1,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 2 supported?"}
+    {"id": "ECT 2_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 2 supported?",   "hidden": true},
+    {"id": "ECT 1_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 1 supported?",   "hidden": true},
+    {"id": "ECT 1",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 1"},
+    {"id": "ECT 2",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "84"}, "freq": 1,
+  "signals": [
+    {"id": "MST", "path": "Engine.Generic", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Manifold surface temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "8E"}, "freq": 0.25,
+  "signals": [
+    {"id": "TQ_FR", "path": "Engine.Generic", "fmt": { "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Engine Friction - Percent Torque"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "9D"}, "freq": 0.25,
   "signals": [
-    {"id": "FUEL_RATE_ALT", "path": "Fuel.Generic", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "gramsPerSecond" }, "name": "Engine fuel rate (alternate)"}
+    {"id": "FUEL_RATE_ALT", "path": "Fuel.Generic", "fmt": {           "len": 16, "max": 1310.7, "div": 50, "unit": "gramsPerSecond" }, "name": "Engine fuel rate (alternate)"},
+    {"id": "VFUEL_RATE",    "path": "Fuel.Generic", "fmt": {"bix": 16, "len": 16, "max": 1310.7, "div": 50, "unit": "gramsPerSecond" }, "name": "Vehicle fuel rate"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "9E"}, "freq": 0.25,
+  "signals": [
+    {"id": "EXH_RATE", "path": "Fuel.Generic", "fmt": { "len": 16, "max": 13107, "div": 5, "unit": "kilogramsPerHour" }, "name": "Engine exhaust flow rate"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "A6"}, "freq": 1,
   "signals": [
-    {"id": "[Trips.Generic] Odometer", "fmt": { "len": 32, "max": 429496729.5, "mul": 0.1, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "ODO", "path": "Trips.Generic", "fmt": { "len": 32, "max": 429496729.5, "div": 10, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "AA"}, "freq": 0.25,
+  "signals": [
+    {"id": "V_SET", "path": "Movement.Generic", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Maximum current vehicle speed limit"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "B2"}, "freq": 60,
+  "signals": [
+    {"id": "BAT_SOH", "path": "Battery.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "kilometersPerHour" }, "name": "Traction battery pack State of Health"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "D3"}, "freq": 1,
+  "signals": [
+    {"id": "ODO_ENG", "path": "Trips.Generic", "fmt": { "len": 32, "max": 429496729.5, "div": 10, "unit": "kilometers" }, "name": "Engine odometer"}
   ]}
 ]
 }
