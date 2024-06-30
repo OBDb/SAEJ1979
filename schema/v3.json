@@ -108,7 +108,9 @@
                 "path": { "type": "string" },
                 "suggestedMetric": { "enum": [
                   "fuelTankLevel",
+                  "isCharging",
                   "odometer",
+                  "pluggedIn",
                   "speed",
                   "stateOfCharge",
                   "stateOfHealth"
