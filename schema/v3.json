@@ -107,10 +107,16 @@
                 },
                 "path": { "type": "string" },
                 "suggestedMetric": { "enum": [
+                  "electricRange",
+                  "frontLeftTirePressure",
+                  "frontRightTirePressure",
+                  "fuelRange",
                   "fuelTankLevel",
                   "isCharging",
                   "odometer",
                   "pluggedIn",
+                  "rearLeftTirePressure",
+                  "rearRightTirePressure",
                   "speed",
                   "stateOfCharge",
                   "stateOfHealth"
