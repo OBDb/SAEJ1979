@@ -13,8 +13,8 @@
       "items": {
         "type": "object",
         "properties": {
-          "hdr": { "type": "string", "minLength": 3, "maxLength": 3 },
-          "rax": { "type": "string", "minLength": 3, "maxLength": 3 },
+          "hdr": { "type": "string", "minLength": 3, "maxLength": 4 },
+          "rax": { "type": "string", "minLength": 2, "maxLength": 3 },
           "fcm1": { "type": "boolean" },
           "cmd": {
             "type": "object",
