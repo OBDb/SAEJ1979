@@ -327,9 +327,9 @@
   "signals": [
     {"id": "TQ_ACT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Actual engine torque"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "63"}, "freq": 0.25,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "63"}, "freq": 86400,
   "signals": [
-    {"id": "TQ_REF", "path": "Engine.Generic", "fmt": { "len": 16, "max": 65535, "unit": "joules" }, "name": "Engine reference torque"}
+    {"id": "TQ_REF", "path": "Engine.Generic", "fmt": { "len": 16, "max": 65535, "unit": "newtonMeters" }, "name": "Engine reference torque"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "64"}, "freq": 3600,
   "signals": [
