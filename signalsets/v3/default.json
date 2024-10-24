@@ -341,16 +341,16 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "65"}, "freq": 0.25,
   "signals": [
-    {"id": "GEAR_SUP",  "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Recommended gear supported",                   "hidden": true},
-    {"id": "GPL_SUP",   "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Glow plug lamp status supported",              "hidden": true},
-    {"id": "N/G_SUP",   "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Manual trans neutral gear status supported",   "hidden": true},
-    {"id": "N/D_SUP",   "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Auto trans neutral drive status supported",    "hidden": true},
-    {"id": "PTO_SUP",   "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Power Take Off (PTO) output status supported", "hidden": true},
-    {"id": "GEAR_RCMD", "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 8,  "len": 4, "max": 15, "unit": "noyes" }, "name": "Recommended gear"},
-    {"id": "GPL_STAT",  "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 12, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Glow plug lamp status"},
-    {"id": "N/G_STAT",  "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 13, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Manual Trans Neutral Gear Status"},
-    {"id": "N/D_STAT",  "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 14, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Auto Trans Neutral Drive Status"},
-    {"id": "PTO_STAT",  "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 15, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Power Take Off (PTO) Output Status"}
+    {"id": "GEAR_SUP",     "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Recommended gear supported",                   "hidden": true},
+    {"id": "GPL_SUP",      "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Glow plug lamp status supported",              "hidden": true},
+    {"id": "N/G_SUP",      "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Manual trans neutral gear status supported",   "hidden": true},
+    {"id": "N/D_SUP",      "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Auto trans neutral drive status supported",    "hidden": true},
+    {"id": "PTO_SUP",      "path": "Engine.Generic.AuxInputs.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,  "unit": "noyes" }, "name": "Power Take Off (PTO) output status supported", "hidden": true},
+    {"id": "GEAR_RCMD",    "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 8,  "len": 4, "max": 15, "unit": "noyes" }, "name": "Recommended gear"},
+    {"id": "GPL_STAT",     "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 12, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Glow plug lamp status"},
+    {"id": "N/G_STAT",     "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 13, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Manual Trans Neutral Gear Status"},
+    {"id": "N/D_STAT",     "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 14, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Auto Trans Neutral Drive Status"},
+    {"id": "PTO_STAT_AUX", "path": "Engine.Generic.AuxInputs",          "fmt": {"bix": 15, "len": 1, "max": 1,  "unit": "noyes" }, "name": "Power Take Off (PTO) Output Status"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "66"}, "freq": 0.25,
   "signals": [
