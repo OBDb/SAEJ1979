@@ -212,7 +212,7 @@
   "signals": [
     {"id": "TP_R", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Relative throttle position", "description": "Relative or 'learned' throttle position."}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "46"}, "freq": 0.25,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "46"}, "freq": 15,
   "signals": [
     {"id": "AAT", "path": "Climate.Generic", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Ambient air temperature"}
   ]},
