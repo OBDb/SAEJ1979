@@ -154,6 +154,11 @@
   "signals": [
     {"id": "FRP", "path": "Engine.Generic", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kilopascal" }, "name": "Fuel rail pressure", "description": "Fuel rail pressure at the engine when the reading is referenced to atmosphere (gage pressure)."}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "24"}, "freq": 0.25,
+  "signals": [
+    {"id": "LAMBDA11_WIDE", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,  "div": 32768, "unit": "scalar" }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1"},
+    {"id": "O2S11_WIDE",    "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 16, "len": 16, "max": 7.999, "div": 8196,  "unit": "volts"  }, "name": "Wide Range O2S Voltage, O2 Sensor Bank 1, Sensor 1"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2C"}, "freq": 1,
   "signals": [
     {"id": "EGR_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Commanded EGR"}
@@ -398,6 +403,21 @@
     {"id": "ECT 1",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 1"},
     {"id": "ECT 2",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 2"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "69"}, "freq": 0.25,
+  "signals": [
+    {"id": "EGR_B_ERR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "EGR A error support status",          "hidden": true},
+    {"id": "EGR_B_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Actual EGR A support status",         "hidden": true},
+    {"id": "EGR_B_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Commanded EGR A support status",      "hidden": true},
+    {"id": "EGR_A_ERR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "EGR A error support status",          "hidden": true},
+    {"id": "EGR_A_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Actual EGR A support status",         "hidden": true},
+    {"id": "EGR_A_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Commanded EGR A support status",      "hidden": true},
+    {"id": "EGR_A_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR A Duty Cycle/Position"},
+    {"id": "EGR_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR A Duty Cycle/Position"},
+    {"id": "EGR_A_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR A error"},
+    {"id": "EGR_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR B Duty Cycle/Position"},
+    {"id": "EGR_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR B Duty Cycle/Position"},
+    {"id": "EGR_B_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR B error"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "6C"}, "freq": 0.25,
   "signals": [
     {"id": "RTP_B_SUP",  "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Relative Throttle B Position data supported?",     "hidden": true},
@@ -408,6 +428,15 @@
     {"id": "TP_A_REL",   "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Relative Throttle A Position"},
     {"id": "TAC_B_CMD",  "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Commanded Throttle Actuator B Control"},
     {"id": "TP_B_REL",   "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Relative Throttle B Position"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "7F"}, "freq": 1,
+  "signals": [
+    {"id": "PTO_TIME_SUP",  "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1,  "max": 1,          "unit": "noyes"   }, "name": "Total Run Time With PTO Active supported?", "hidden": true},
+    {"id": "IDLE_TIME_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1,  "max": 1,          "unit": "noyes"   }, "name": "Total Idle Run Time supported?",            "hidden": true},
+    {"id": "RUN_TIME_SUP",  "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1,  "max": 1,          "unit": "noyes"   }, "name": "Total Engine Run Time supported?",          "hidden": true},
+    {"id": "RUN_TIME",      "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 32, "max": 4294967295, "unit": "seconds" }, "name": "Total Engine Run Time"},
+    {"id": "IDLE_TIME",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 32, "max": 4294967295, "unit": "seconds" }, "name": "Total Idle Run Time"},
+    {"id": "PTO_TIME",      "path": "Engine.Generic",          "fmt": {"bix": 72, "len": 32, "max": 4294967295, "unit": "seconds" }, "name": "Total Run Time With PTO Active"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "84"}, "freq": 1,
   "signals": [
