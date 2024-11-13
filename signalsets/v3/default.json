@@ -230,7 +230,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "42"}, "freq": 0.25,
   "signals": [
-    {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "description": "Oower input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module."}
+    {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "description": "Power input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "43"}, "freq": 0.25,
   "signals": [
