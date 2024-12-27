@@ -1,4 +1,4 @@
-{ "commands": [
+[
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "01"}, "freq": 10,
   "signals": [
     {"id": "MIL",      "path": "DTCs.Generic",         "fmt": {           "len": 1, "max": 1,   "unit": "offon"  }, "name": "Malfunction indicator lamp",                   "description": "The MIL status is OFF during key-on, engine-off bulb check unless MIL has also been commanded ON for a detected malfunction. The status reflects whether there are confirmed DTC(s) stored that are illuminating the MIL. It should not reflect the status of the MIL, which could be on for a function check, flashing I/M readiness or flashing for misfire."},
@@ -233,9 +233,9 @@
     {"id": "CAT_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 31, "len": 1, "max": 1, "unit": "yesno" }, "name": "Catalyst monitoring completed"},
     {"id": "CIM_SUP_FLAG", "path": "DTCs.Generic.Support", "fmt": {"bix": 12, "len": 1, "map": {"0":{"description":"Spark ignition monitors supported","value":"SPARK"},"1":{"description":"Compression ignition monitors supported","value":"COMPRESSION"}} }, "name": "Compression ignition monitoring supported", "hidden": true}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "42"}, "freq": 0.25,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "42"}, "freq": 1,
   "signals": [
-    {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "description": "Power input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module."}
+    {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "suggestedMetric": "starterBatteryVoltage", "description": "Power input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "43"}, "freq": 0.25,
   "signals": [
@@ -450,6 +450,17 @@
   "signals": [
     {"id": "TQ_FR", "path": "Engine.Generic", "fmt": { "len": 8, "max": 130, "min": -125, "add": -125, "unit": "percent" }, "name": "Engine Friction - Percent Torque"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "9A"}, "freq": 0.25,
+  "signals": [
+    {"id": "EHEV_MODE_SUP",  "path": "Battery.Generic.Internal", "fmt": {"bix": 4,  "len": 1,  "max": 1,                                                "unit": "noyes" }, "name": "Enhanced Hybrid/EV Vehicle Charging State supported?", "hidden": true},
+    {"id": "HEV_BATT_A_SUP", "path": "Battery.Generic.Internal", "fmt": {"bix": 5,  "len": 1,  "max": 1,                                                "unit": "noyes" }, "name": "Hybrid/EV Battery Current supported?",                 "hidden": true},
+    {"id": "HEV_BATT_V_SUP", "path": "Battery.Generic.Internal", "fmt": {"bix": 6,  "len": 1,  "max": 1,                                                "unit": "noyes" }, "name": "Hybrid/EV Battery Voltage supported?",                 "hidden": true},
+    {"id": "HEV_MODE_SUP",   "path": "Battery.Generic.Internal", "fmt": {"bix": 7,  "len": 1,  "max": 1,                                                "unit": "noyes" }, "name": "Hybrid/EV Vehicle Charging State supported?",          "hidden": true},
+    {"id": "HEV_BATT_V",     "path": "Battery.Generic",          "fmt": {"bix": 16, "len": 16, "max": 1023.98,                 "div": 64,               "unit": "volts" }, "name": "Hybrid/EV Battery System Voltage"},
+    {"id": "HEV_BATT_A",     "path": "Battery.Generic",          "fmt": {"bix": 32, "len": 16, "max": 3276.7,  "min": -3276.8, "div": 10, "sign": true, "unit": "volts" }, "name": "Hybrid/EV Battery System Current"},
+    {"id": "HEV_MODE",  "path": "Battery.Generic", "fmt": {          "len": 1, "map": {"0":{"description":"Charge sustaining mode","value":"CSM"},"1":{"description":"Charge depleting mode","value":"CDM"}}                                                            }, "name": "Hybrid/EV Vehicle Charging State"},
+    {"id": "EHEV_MODE", "path": "Battery.Generic", "fmt": {"bix": 1, "len": 2, "map": {"0":{"description":"Charge sustaining mode","value":"CSM"},"1":{"description":"Charge depleting mode","value":"CDM"},"2":{"description":"Charge increasing mode","value":"CIM"}} }, "name": "Enhanced Hybrid/EV Vehicle Charging State"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "9D"}, "freq": 0.25,
   "signals": [
     {"id": "FUEL_RATE_ALT", "path": "Fuel.Generic", "fmt": {           "len": 16, "max": 1310.7, "div": 50, "unit": "gramsPerSecond" }, "name": "Engine fuel rate (alternate)"},
@@ -476,4 +487,3 @@
     {"id": "ODO_ENG", "path": "Trips.Generic", "fmt": { "len": 32, "max": 429496729.5, "div": 10, "unit": "kilometers" }, "name": "Engine odometer"}
   ]}
 ]
-}
