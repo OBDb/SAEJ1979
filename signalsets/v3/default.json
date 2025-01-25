@@ -76,7 +76,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0D"}, "freq": 0.25,
   "signals": [
-    {"id": "VSS", "path": "Movement.Generic", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+    {"id": "VSS", "path": "Movement.Generic", "fmt": { "len": 8, "max": 255, "nullmax": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0E"}, "freq": 0.25,
   "signals": [
