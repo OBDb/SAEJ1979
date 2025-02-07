@@ -181,7 +181,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "31"}, "freq": 15,
   "signals": [
-    {"id": "CLR_DIST", "path": "DTCs.Generic", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance traveled since diagnostic trouble codes cleared", "description": "Distance accumulated since DTCs were cleared (via an external test equipment or possibly, a battery disconnect). This parameter is not associated with any particular DTC. It is simply an indication for inspection/maintenance, of the last time an external test equipment was used to clear DTCs. If greater than 65,535 km have occurred, will remain at 65,535 km and not wrap to zero."}
+    {"id": "CLR_DIST", "path": "DTCs.Generic", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance traveled since diagnostic trouble codes cleared", "suggestedMetric": "distanceSinceDTCsCleared", "description": "Distance accumulated since DTCs were cleared (via an external test equipment or possibly, a battery disconnect). This parameter is not associated with any particular DTC. It is simply an indication for inspection/maintenance, of the last time an external test equipment was used to clear DTCs. If greater than 65,535 km have occurred, will remain at 65,535 km and not wrap to zero."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "32"}, "freq": 0.25,
   "signals": [
@@ -428,6 +428,21 @@
     {"id": "TP_A_REL",   "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Relative Throttle A Position"},
     {"id": "TAC_B_CMD",  "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Commanded Throttle Actuator B Control"},
     {"id": "TP_B_REL",   "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Relative Throttle B Position"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "6D"}, "freq": 0.25,
+  "signals": [
+    {"id": "FRT_B_SUP",     "path": "Fuel.Generic.Internal", "fmt": {"bix": 2,  "len": 1,  "max": 1,                                         "unit": "noyes"      }, "name": "Fuel Temperature B data supported?",             "hidden": true},
+    {"id": "FRP_B_SUP",     "path": "Fuel.Generic.Internal", "fmt": {"bix": 3,  "len": 1,  "max": 1,                                         "unit": "noyes"      }, "name": "Fuel Rail Pressure B data supported?",           "hidden": true},
+    {"id": "FRP_B_CMD_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 4,  "len": 1,  "max": 1,                                         "unit": "noyes"      }, "name": "Commanded Fuel Rail Pressure B data supported?", "hidden": true},
+    {"id": "FRT_A_SUP",     "path": "Fuel.Generic.Internal", "fmt": {"bix": 5,  "len": 1,  "max": 1,                                         "unit": "noyes"      }, "name": "Fuel Temperature A data supported?",             "hidden": true},
+    {"id": "FRP_A_SUP",     "path": "Fuel.Generic.Internal", "fmt": {"bix": 6,  "len": 1,  "max": 1,                                         "unit": "noyes"      }, "name": "Fuel Rail Pressure A data supported?",           "hidden": true},
+    {"id": "FRP_A_CMD_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 7,  "len": 1,  "max": 1,                                         "unit": "noyes"      }, "name": "Commanded Fuel Rail Pressure A data supported?", "hidden": true},
+    {"id": "FRP_A_CMD",     "path": "Fuel.Generic",          "fmt": {"bix": 8,  "len": 16, "max": 655350,             "mul": 10,             "unit": "kilopascal" }, "name": "Commanded Fuel Rail Pressure A",                 "description": "Displays commanded fuel rail pressure when the reading is referenced to atmosphere (gage pressure)"},
+    {"id": "FRP_A",         "path": "Fuel.Generic",          "fmt": {"bix": 24, "len": 16, "max": 655350,             "mul": 10,             "unit": "kilopascal" }, "name": "Fuel Rail Pressure A",                           "description": "Displays fuel rail pressure when the reading is referenced to atmosphere (gage pressure)."},
+    {"id": "FRT_A",         "path": "Fuel.Generic",          "fmt": {"bix": 40, "len": 8,  "max": 215,    "min": -40,            "add": -40, "unit": "celsius"    }, "name": "Fuel Rail Temperature A"},
+    {"id": "FRP_B_CMD",     "path": "Fuel.Generic",          "fmt": {"bix": 48, "len": 16, "max": 655350,             "mul": 10,             "unit": "kilopascal" }, "name": "Commanded Fuel Rail Pressure B",                 "description": "Displays commanded fuel rail pressure when the reading is referenced to atmosphere (gage pressure)"},
+    {"id": "FRP_B",         "path": "Fuel.Generic",          "fmt": {"bix": 64, "len": 16, "max": 655350,             "mul": 10,             "unit": "kilopascal" }, "name": "Fuel Rail Pressure B",                           "description": "Displays fuel rail pressure when the reading is referenced to atmosphere (gage pressure)."},
+    {"id": "FRT_B",         "path": "Fuel.Generic",          "fmt": {"bix": 80, "len": 8,  "max": 215,    "min": -40,            "add": -40, "unit": "celsius"    }, "name": "Fuel Rail Temperature B"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "7F"}, "freq": 1,
   "signals": [
