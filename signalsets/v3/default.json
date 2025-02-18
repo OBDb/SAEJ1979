@@ -233,7 +233,7 @@
     {"id": "CAT_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 31, "len": 1, "max": 1, "unit": "yesno" }, "name": "Catalyst monitoring completed"},
     {"id": "CIM_SUP_FLAG", "path": "DTCs.Generic.Support", "fmt": {"bix": 12, "len": 1, "map": {"0":{"description":"Spark ignition monitors supported","value":"SPARK"},"1":{"description":"Compression ignition monitors supported","value":"COMPRESSION"}} }, "name": "Compression ignition monitoring supported", "hidden": true}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "42"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "42"}, "freq": 10,
   "signals": [
     {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "suggestedMetric": "starterBatteryVoltage", "description": "Power input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module."}
   ]},
