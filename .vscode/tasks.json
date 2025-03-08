@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Format Signals",
+            "type": "shell",
+            "command": "find signalsets/v3 -type f -exec python tests/schemas/cli.py '{}' --output '{}' \\;",
+            "problemMatcher": []
+        }
+    ]
+}
