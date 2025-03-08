@@ -630,6 +630,10 @@
   "signals": [
     {"id": "EXH_RATE", "path": "Fuel.Generic", "fmt": { "len": 16, "max": 13107, "div": 5, "unit": "kilogramsPerHour" }, "name": "Engine exhaust flow rate"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "A2"}, "freq": 0.25,
+  "signals": [
+    {"id": "CYL_RATE", "path": "Engine.Generic", "fmt": { "len": 16, "max": 2047.96875, "div": 32, "unit": "milligramsPerStroke" }, "name": "Cylinder fuel rate"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "A6"}, "freq": 1,
   "signals": [
     {"id": "ODO", "path": "Trips.Generic", "fmt": { "len": 32, "max": 429496729.5, "div": 10, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
