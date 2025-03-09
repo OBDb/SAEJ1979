@@ -539,6 +539,21 @@
     {"id": "ECT 1",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 1"},
     {"id": "ECT 2",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 2"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "68"}, "freq": 0.25,
+  "signals": [
+    {"id": "IAT_23_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 2, Sensor 3 supported",           "hidden": true},
+    {"id": "IAT_22_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 2, Sensor 2 supported",           "hidden": true},
+    {"id": "IAT_21_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 1 supported",           "hidden": true},
+    {"id": "IAT_13_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 3 supported",           "hidden": true},
+    {"id": "IAT_12_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 2 supported",           "hidden": true},
+    {"id": "IAT_11_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 1 supported",           "hidden": true},
+    {"id": "IAT_11",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 1"},
+    {"id": "IAT_12",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 2"},
+    {"id": "IAT_13",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 3"},
+    {"id": "IAT_21",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 1"},
+    {"id": "IAT_22",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 2"},
+    {"id": "IAT_23",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 3"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "69"}, "freq": 0.25,
   "signals": [
     {"id": "EGR_B_ERR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "EGR A error support status",          "hidden": true},
