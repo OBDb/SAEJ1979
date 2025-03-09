@@ -556,17 +556,17 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "69"}, "freq": 0.25,
   "signals": [
-    {"id": "EGR_B_ERR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "EGR A error support status",          "hidden": true},
-    {"id": "EGR_B_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Actual EGR A support status",         "hidden": true},
-    {"id": "EGR_B_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Commanded EGR A support status",      "hidden": true},
-    {"id": "EGR_A_ERR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "EGR A error support status",          "hidden": true},
-    {"id": "EGR_A_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Actual EGR A support status",         "hidden": true},
-    {"id": "EGR_A_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Commanded EGR A support status",      "hidden": true},
-    {"id": "EGR_A_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR A Duty Cycle/Position"},
-    {"id": "EGR_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR A Duty Cycle/Position"},
+    {"id": "EGR_B_ERR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "EGR A error supported",               "hidden": true},
+    {"id": "EGR_B_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Actual EGR A supported",              "hidden": true},
+    {"id": "EGR_B_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Commanded EGR A supported",           "hidden": true},
+    {"id": "EGR_A_ERR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "EGR A error supported",               "hidden": true},
+    {"id": "EGR_A_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Actual EGR A supported",              "hidden": true},
+    {"id": "EGR_A_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Commanded EGR A supported",           "hidden": true},
+    {"id": "EGR_A_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR A duty cycle/position"},
+    {"id": "EGR_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR A duty cycle/position"},
     {"id": "EGR_A_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR A error"},
-    {"id": "EGR_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR B Duty Cycle/Position"},
-    {"id": "EGR_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR B Duty Cycle/Position"},
+    {"id": "EGR_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR B duty cycle/position"},
+    {"id": "EGR_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR B duty cycle/position"},
     {"id": "EGR_B_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR B error"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "6C"}, "freq": 0.25,
@@ -594,6 +594,31 @@
     {"id": "FRP_B_CMD",     "path": "Fuel.Generic",          "fmt": {"bix": 48, "len": 16, "max": 655350,             "mul": 10,             "unit": "kilopascal" }, "name": "Commanded Fuel Rail Pressure B",                 "description": "Displays commanded fuel rail pressure when the reading is referenced to atmosphere (gage pressure)"},
     {"id": "FRP_B",         "path": "Fuel.Generic",          "fmt": {"bix": 64, "len": 16, "max": 655350,             "mul": 10,             "unit": "kilopascal" }, "name": "Fuel Rail Pressure B",                           "description": "Displays fuel rail pressure when the reading is referenced to atmosphere (gage pressure)."},
     {"id": "FRT_B",         "path": "Fuel.Generic",          "fmt": {"bix": 80, "len": 8,  "max": 215,    "min": -40,            "add": -40, "unit": "celsius"    }, "name": "Fuel Rail Temperature B"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "70"}, "freq": 0.25,
+  "signals": [
+    {"id": "BP_B_SUP",     "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1,  "max": 1,                     "unit": "noyes"      }, "name": "Boost pressure B control status supported", "hidden": true},
+    {"id": "BP_B_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1,  "max": 1,                     "unit": "noyes"      }, "name": "Boost pressure B supported",                "hidden": true},
+    {"id": "BP_B_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1,  "max": 1,                     "unit": "noyes"      }, "name": "Commanded boost pressure B supported",      "hidden": true},
+    {"id": "BP_A_SUP",     "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1,  "max": 1,                     "unit": "noyes"      }, "name": "Boost pressure A control status supported", "hidden": true},
+    {"id": "BP_A_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1,  "max": 1,                     "unit": "noyes"      }, "name": "Boost pressure A supported",                "hidden": true},
+    {"id": "BP_A_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1,  "max": 1,                     "unit": "noyes"      }, "name": "Commanded boost pressure A supported",      "hidden": true},
+    {"id": "BP_A_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Commanded boost pressure A",                "description": "Turbocharger/supercharger A commanded boost pressure."},
+    {"id": "BP_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Boost pressure sensor A",                   "description": "Actual turbocharger/supercharger A boost pressure."},
+    {"id": "BP_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Commanded boost pressure B",                "description": "Turbocharger/supercharger B commanded boost pressure."},
+    {"id": "BP_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 56, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Boost pressure sensor B",                   "description": "Actual turbocharger/supercharger B boost pressure."},
+    {"id": "BP_B", "path": "Engine.Generic.Internal", "name": "Boost bressure A control status", "fmt": {"bix": 76, "len": 2, "map": {
+          "1": { "description": "Open loop",   "value": "BP_B_OL" },
+          "2": { "description": "Closed loop", "value": "BP_B_CL" },
+          "3": { "description": "Fault",       "value": "BP_B_FAULT" }
+        }}
+    },
+    {"id": "BP_A", "path": "Engine.Generic.Internal", "name": "Boost bressure A control status", "fmt": {"bix": 78, "len": 2, "map": {
+          "1": { "description": "Open loop",   "value": "BP_A_OL" },
+          "2": { "description": "Closed loop", "value": "BP_A_CL" },
+          "3": { "description": "Fault",       "value": "BP_A_FAULT" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "7F"}, "freq": 1,
   "signals": [
