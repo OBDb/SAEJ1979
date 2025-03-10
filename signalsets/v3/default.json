@@ -681,6 +681,25 @@
   "signals": [
     {"id": "EXH_RATE", "path": "Fuel.Generic", "fmt": { "len": 16, "max": 13107, "div": 5, "unit": "kilogramsPerHour" }, "name": "Engine exhaust flow rate"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "9F"}, "freq": 0.25,
+  "signals": [
+    {"id": "FUELSYSB_B4_SUP", "path": "Fuel.Generic.Internal", "fmt": {           "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Fuel system B use percentage bank 4 supported", "hidden": true},
+    {"id": "FUELSYSA_B4_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 1,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Fuel system A use percentage bank 4 supported", "hidden": true},
+    {"id": "FUELSYSB_B3_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Fuel system B use percentage bank 3 supported", "hidden": true},
+    {"id": "FUELSYSA_B3_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Fuel system A use percentage bank 3 supported", "hidden": true},
+    {"id": "FUELSYSB_B2_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Fuel system B use percentage bank 2 supported", "hidden": true},
+    {"id": "FUELSYSA_B2_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Fuel system A use percentage bank 2 supported", "hidden": true},
+    {"id": "FUELSYSB_B1_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Fuel system B use percentage bank 1 supported", "hidden": true},
+    {"id": "FUELSYSA_B1_SUP", "path": "Fuel.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "Fuel system A use percentage bank 1 supported", "hidden": true},
+    {"id": "FUELSYSA_B1",     "path": "Fuel.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel system A use percentage bank 1"},
+    {"id": "FUELSYSB_B1",     "path": "Fuel.Generic",          "fmt": {"bix": 16, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel system B use percentage bank 1"},
+    {"id": "FUELSYSA_B2",     "path": "Fuel.Generic",          "fmt": {"bix": 24, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel system A use percentage bank 2"},
+    {"id": "FUELSYSB_B2",     "path": "Fuel.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel system B use percentage bank 2"},
+    {"id": "FUELSYSA_B3",     "path": "Fuel.Generic",          "fmt": {"bix": 40, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel system A use percentage bank 3"},
+    {"id": "FUELSYSB_B3",     "path": "Fuel.Generic",          "fmt": {"bix": 48, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel system B use percentage bank 3"},
+    {"id": "FUELSYSA_B4",     "path": "Fuel.Generic",          "fmt": {"bix": 56, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel system A use percentage bank 4"},
+    {"id": "FUELSYSB_B4",     "path": "Fuel.Generic",          "fmt": {"bix": 64, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel system B use percentage bank 4"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "A2"}, "freq": 0.25,
   "signals": [
     {"id": "CYL_RATE", "path": "Engine.Generic", "fmt": { "len": 16, "max": 2047.96875, "div": 32, "unit": "milligramsPerStroke" }, "name": "Cylinder fuel rate"}
@@ -695,7 +714,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "B2"}, "freq": 60,
   "signals": [
-    {"id": "BAT_SOH", "path": "Battery.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "kilometersPerHour" }, "name": "Traction battery pack State of Health"}
+    {"id": "BAT_SOH", "path": "Battery.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Traction battery pack State of Health"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "D2"}, "freq": 300,
   "signals": [
