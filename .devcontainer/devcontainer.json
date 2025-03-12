@@ -1,24 +1,20 @@
 {
-    "name": "Python and Node.js Development",
-    "image": "mcr.microsoft.com/devcontainers/python:3.13",
-    "features": {
-        "ghcr.io/devcontainers/features/node:1": {
-            "version": "lts"
-        }
-    },
+    "name": "Python Development",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
-                "GitHub.vscode-github-actions"
+                "GitHub.vscode-github-actions",
+                "GitHub.vscode-pull-request-github"
             ],
             "settings": {
-                "task.quickOpen.skip": false
+                "task.quickOpen.skip": true
             }
         }
     },
-    "postCreateCommand": "pip install pytest && npm install -g @anthropic-ai/claude-code",
-    "postAttachCommand": "pushd tests/schemas && git pull && popd || git clone https://github.com/OBDb/.schemas.git tests/schemas",
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y python3 python3-pip python3-venv && pip install pytest",
+    "postAttachCommand": "pushd tests/schemas && git pull && popd || git clone --depth=1 https://github.com/OBDb/.schemas.git tests/schemas",
     "remoteUser": "vscode"
 }

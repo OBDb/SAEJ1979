@@ -4,7 +4,7 @@
         {
             "label": "Format Signals",
             "type": "shell",
-            "command": "find signalsets/v3 -type f -exec python tests/schemas/cli.py '{}' --output '{}' \\;",
+            "command": "find signalsets/v3 -type f -exec python3 tests/schemas/cli.py '{}' --output '{}' \\;",
             "problemMatcher": []
         }
     ]
