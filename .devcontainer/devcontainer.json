@@ -1,6 +1,6 @@
 {
     "name": "Python Development",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "image": "mcr.microsoft.com/devcontainers/python:3",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -14,7 +14,7 @@
             }
         }
     },
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y python3 python3-pip python3-venv && pip install pytest",
+    "postCreateCommand": "pip install pytest",
     "postAttachCommand": "pushd tests/schemas && git pull && popd || git clone --depth=1 https://github.com/OBDb/.schemas.git tests/schemas",
     "remoteUser": "vscode"
 }
