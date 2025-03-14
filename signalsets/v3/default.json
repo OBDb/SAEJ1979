@@ -265,7 +265,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2F"}, "freq": 1,
   "signals": [
-    {"id": "FLI", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel tank level", "suggestedMetric": "fuelTankLevel"}
+    {"id": "FLI", "path": "Fuel.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "nullmin": 0, "unit": "percent" }, "name": "Fuel tank level", "suggestedMetric": "fuelTankLevel"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "30"}, "freq": 60,
   "signals": [
