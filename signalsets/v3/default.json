@@ -25,7 +25,11 @@
     {"id": "EVAP_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 29, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Evaporative system monitoring ready"},
     {"id": "HCAT_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 30, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Heated catalyst monitoring ready"},
     {"id": "CAT_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 31, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Catalyst monitoring ready"},
-    {"id": "CIM_SUP", "path": "DTCs.Generic.Support", "fmt": {"bix": 12, "len": 1, "map": {"0":{"description":"Spark ignition monitors supported","value":"SPARK"},"1":{"description":"Compression ignition monitors supported","value":"COMPRESSION"}} }, "name": "Compression ignition monitoring supported", "description": "Indicates support of spark ignition or compression ignition monitors.", "hidden": true}
+    {"id": "CIM_SUP", "path": "DTCs.Generic.Support", "name": "Compression ignition monitoring supported", "description": "Indicates support of spark ignition or compression ignition monitors.", "hidden": true, "fmt": {"bix": 12, "len": 1, "map": {
+          "0": { "description": "Spark ignition monitors supported",       "value": "SPARK" },
+          "1": { "description": "Compression ignition monitors supported", "value": "COMPRESSION" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "02"}, "freq": 60,
   "signals": [
@@ -33,8 +37,30 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "03"}, "freq": 0.25,
   "signals": [
-    {"id": "FUELSYS1", "path": "Fuel.Generic", "fmt": {          "len": 8, "map": {"0":{"description":"Engine is off","value":"OFF"},"1":{"description":"Open loop - has not yet satisfied conditions to go closed loop","value":"OL"},"128":{"description":"Open loop - due to detected system fault (Bank 2)","value":"OL-Fault B2"},"16":{"description":"Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control","value":"CL-Fault"},"2":{"description":"Closed loop - using oxygen sensor(s) as feedback for fuel control","value":"CL"},"32":{"description":"Open loop - has not yet satisfied conditions to go closed loop (Bank 2)","value":"OL B2"},"4":{"description":"Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)","value":"OL-Drive"},"64":{"description":"Open loop due to driving conditions (Bank 2) (e.g. power enrichment, deceleration enleanment, cylinder deactivation)","value":"OL-Drive B2"},"8":{"description":"Open loop - due to detected system fault","value":"OL-Fault"}} }, "name": "Fuel system 1 status"},
-    {"id": "FUELSYS2", "path": "Fuel.Generic", "fmt": {"bix": 8, "len": 8, "map": {"0":{"description":"Engine is off","value":"OFF"},"1":{"description":"Open loop - has not yet satisfied conditions to go closed loop","value":"OL"},"128":{"description":"Open loop - due to detected system fault (Bank 2)","value":"OL-Fault B2"},"16":{"description":"Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control","value":"CL-Fault"},"2":{"description":"Closed loop - using oxygen sensor(s) as feedback for fuel control","value":"CL"},"32":{"description":"Open loop - has not yet satisfied conditions to go closed loop (Bank 2)","value":"OL B2"},"4":{"description":"Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)","value":"OL-Drive"},"64":{"description":"Open loop due to driving conditions (Bank 2) (e.g. power enrichment, deceleration enleanment, cylinder deactivation)","value":"OL-Drive B2"},"8":{"description":"Open loop - due to detected system fault","value":"OL-Fault"}} }, "name": "Fuel system 2 status"}
+    {"id": "FUELSYS1", "path": "Fuel.Generic", "name": "Fuel system 1 status", "fmt": {"len": 8, "map": {
+          "0":   { "description": "Engine is off",                                                                                                        "value": "OFF" },
+          "1":   { "description": "Open loop - has not yet satisfied conditions to go closed loop",                                                       "value": "OL" },
+          "2":   { "description": "Closed loop - using oxygen sensor(s) as feedback for fuel control",                                                    "value": "CL" },
+          "4":   { "description": "Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)",                                 "value": "OL-Drive" },
+          "8":   { "description": "Open loop - due to detected system fault",                                                                             "value": "OL-Fault" },
+          "16":  { "description": "Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control",          "value": "CL-Fault" },
+          "32":  { "description": "Open loop - has not yet satisfied conditions to go closed loop (Bank 2)",                                              "value": "OL B2" },
+          "64":  { "description": "Open loop due to driving conditions (Bank 2) (e.g. power enrichment, deceleration enleanment, cylinder deactivation)", "value": "OL-Drive B2" },
+          "128": { "description": "Open loop - due to detected system fault (Bank 2)",                                                                    "value": "OL-Fault B2" }
+        }}
+    },
+    {"id": "FUELSYS2", "path": "Fuel.Generic", "name": "Fuel system 2 status", "fmt": {"bix": 8, "len": 8, "map": {
+          "0":   { "description": "Engine is off",                                                                                                        "value": "OFF" },
+          "1":   { "description": "Open loop - has not yet satisfied conditions to go closed loop",                                                       "value": "OL" },
+          "2":   { "description": "Closed loop - using oxygen sensor(s) as feedback for fuel control",                                                    "value": "CL" },
+          "4":   { "description": "Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)",                                 "value": "OL-Drive" },
+          "8":   { "description": "Open loop - due to detected system fault",                                                                             "value": "OL-Fault" },
+          "16":  { "description": "Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control",          "value": "CL-Fault" },
+          "32":  { "description": "Open loop - has not yet satisfied conditions to go closed loop (Bank 2)",                                              "value": "OL B2" },
+          "64":  { "description": "Open loop due to driving conditions (Bank 2) (e.g. power enrichment, deceleration enleanment, cylinder deactivation)", "value": "OL-Drive B2" },
+          "128": { "description": "Open loop - due to detected system fault (Bank 2)",                                                                    "value": "OL-Fault B2" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "04"}, "freq": 0.25,
   "signals": [
@@ -96,7 +122,13 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "12"}, "freq": 60,
   "signals": [
-    {"id": "AIR_STAT", "path": "Engine.Generic", "fmt": {"bix": 5, "len": 3, "map": {"1":{"description":"Upstream of first catalytic converter","value":"UPS"},"2":{"description":"Downstream of first catalytic converter inlet","value":"DNS"},"4":{"description":"Atmosphere / off","value":"OFF"},"8":{"description":"Pump commanded on for diagnostics","value":"DIAG"}} }, "name": "Commanded secondary air status"}
+    {"id": "AIR_STAT", "path": "Engine.Generic", "name": "Commanded secondary air status", "fmt": {"bix": 5, "len": 3, "map": {
+          "1": { "description": "Upstream of first catalytic converter",         "value": "UPS" },
+          "2": { "description": "Downstream of first catalytic converter inlet", "value": "DNS" },
+          "4": { "description": "Atmosphere / off",                              "value": "OFF" },
+          "8": { "description": "Pump commanded on for diagnostics",             "value": "DIAG" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "13"}, "freq": 3600,
   "signals": [
@@ -121,7 +153,67 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "1C"}, "freq": 3600,
   "signals": [
-    {"id": "OBDSUP", "path": "OBD.Generic", "fmt": { "len": 8, "map": {"1":{"description":"OBD II (California ARB)","value":"OBD II"},"10":{"description":"JOBD","value":"JOBD"},"11":{"description":"JOBD & OBD II","value":"JOBD & OBD II"},"12":{"description":"JOBD & EOBD","value":"JOBD & EOBD"},"13":{"description":"JOBD, EOBD, OBD II","value":"JOBD, EOBD, OBD II"},"14":{"description":"Heavy duty vehicles (EURO IV) B1","value":"EURO IV B1"},"15":{"description":"Heavy duty vehicles (EURO V) B2","value":"EURO V B2"},"16":{"description":"Heavy duty vehicles (EURO EEC) C (gas engines)","value":"EURO C"},"17":{"description":"Engine manufacturer diagnostics (EMD)","value":"EMD"},"18":{"description":"Engine Manufacturer Diagnostics Enhanced (EMD+)","value":"EMD+"},"19":{"description":"Heavy Duty On-Board Diagnostics (Child/Partial)","value":"HD OBD-C"},"2":{"description":"OBD (Federal EPA)","value":"OBD"},"20":{"description":"Heavy Duty On-Board Diagnostics","value":"HD OBD"},"21":{"description":"World Wide Harmonized OBD","value":"WWH OBD"},"23":{"description":"Heavy Duty Euro OBD Stage I without NOx Control","value":"HD EOBD-I"},"24":{"description":"Heavy Duty Euro OBD Stage I with NOx Control","value":"HD EOBD-I N"},"25":{"description":"Heavy Duty Euro OBD Stage II without NOx Control","value":"HD EOBD-II"},"26":{"description":"Heavy Duty Euro OBD Stage II with NOx Control","value":"HD EOBD-II N"},"27":{"description":"Heavy Duty ZEV","value":"HD-ZEV"},"28":{"description":"Brazil OBD Phase 1","value":"OBDBr-1"},"29":{"description":"Brazil OBD Phase 2 and Phase 2+","value":"OBDBr-2"},"3":{"description":"OBD & OBD II","value":"OBD & OBD II"},"30":{"description":"Korean OBD","value":"KOBD"},"31":{"description":"India BS4 OBD I","value":"IOBD-I-BS4"},"32":{"description":"India BS4 OBD II","value":"IOBD-II-BS4"},"33":{"description":"Euro VI","value":"HD EOBD-VI"},"34":{"description":"OBD, OBD II and HD OBD","value":"OBD, OBD II and HD OBD"},"35":{"description":"Brazil OBD Phase 3","value":"OBDBr-3"},"36":{"description":"Motorcycle, Euro OBD-I","value":"MC EOBD-I"},"37":{"description":"Motorcycle, Euro OBD-II","value":"MC EOBD-II"},"38":{"description":"Motorcycle, China OBD-I","value":"MC COBD-I"},"39":{"description":"Motorcycle, Taiwan OBD-I","value":"MC TOBD-I"},"4":{"description":"OBD I","value":"OBD I"},"40":{"description":"Motorcycle, Japan OBD-I","value":"MC JOBD-I"},"41":{"description":"China Nationwide Stage 6","value":"CN-OBD-6"},"42":{"description":"Brazil OBD Phase 7","value":"OBDBr-P7"},"43":{"description":"China Heavy Duty VI","value":"CN-HDOBD-VI"},"44":{"description":"India BS6 OBD I","value":"IOBD-I-BS6"},"45":{"description":"India BS6 OBD II","value":"IOBD-II-BS6"},"46":{"description":"India BSVI HD OBD","value":"IHDOBD-BSVI"},"47":{"description":"Brazil OBD Phase 8","value":"OBDBr-P8"},"48":{"description":"Japan Heavy Duty OBD-II","value":"HD-JOBD-II"},"49":{"description":"Korea Heavy Duty OBD-II","value":"HD-KOBD-II"},"5":{"description":"Not OBD compliant","value":"NO OBD"},"50":{"description":"China Off-Road IV OBD","value":"CN-OROBD-IV"},"51":{"description":"Light Duty ZEV, ACC-II","value":"CARB ACC-II"},"52":{"description":"Motorcycle, Japan OBD-II","value":"MC JOBD-II"},"53":{"description":"Motorcycle, California (CARB) OBD","value":"MC CARB OBD"},"54":{"description":"Motorcycle, Federal (EPA) OBD","value":"MC EPA OBD"},"55":{"description":"Motorcycle, 50-State (CARB & EPA) OBD","value":"MC CARB & EPA OBD"},"56":{"description":"Heavy Duty ZEV, CARB ZEP","value":"HD ZEV CARB ZEP"},"57":{"description":"Light Duty ZEV, CARB ACC-II and EPA Tier 4 (GTR 22)","value":"CARB ACC-II & EPA TIER4"},"58":{"description":"Light Duty ZEV, EPA Tier 4 (GTR 22)","value":"EPA TIER4"},"59":{"description":"EPA HD OBD","value":"EPA HD"},"6":{"description":"EOBD","value":"EOBD"},"7":{"description":"EOBD & OBD II","value":"EOBD & OBD II"},"8":{"description":"EOBD & OBD","value":"EOBD & OBD"},"9":{"description":"EOBD, OBD, OBD II","value":"EOBD, OBD, OBD II"}} }, "name": "OBD requirements to which vehicle is designed"}
+    {"id": "OBDSUP", "path": "OBD.Generic", "name": "OBD requirements to which vehicle is designed", "fmt": {"len": 8, "map": {
+          "1":  { "description": "OBD II (California ARB)",                             "value": "OBD II" },
+          "2":  { "description": "OBD (Federal EPA)",                                   "value": "OBD" },
+          "3":  { "description": "OBD & OBD II",                                        "value": "OBD & OBD II" },
+          "4":  { "description": "OBD I",                                               "value": "OBD I" },
+          "5":  { "description": "Not OBD compliant",                                   "value": "NO OBD" },
+          "6":  { "description": "EOBD",                                                "value": "EOBD" },
+          "7":  { "description": "EOBD & OBD II",                                       "value": "EOBD & OBD II" },
+          "8":  { "description": "EOBD & OBD",                                          "value": "EOBD & OBD" },
+          "9":  { "description": "EOBD, OBD, OBD II",                                   "value": "EOBD, OBD, OBD II" },
+          "10": { "description": "JOBD",                                                "value": "JOBD" },
+          "11": { "description": "JOBD & OBD II",                                       "value": "JOBD & OBD II" },
+          "12": { "description": "JOBD & EOBD",                                         "value": "JOBD & EOBD" },
+          "13": { "description": "JOBD, EOBD, OBD II",                                  "value": "JOBD, EOBD, OBD II" },
+          "14": { "description": "Heavy duty vehicles (EURO IV) B1",                    "value": "EURO IV B1" },
+          "15": { "description": "Heavy duty vehicles (EURO V) B2",                     "value": "EURO V B2" },
+          "16": { "description": "Heavy duty vehicles (EURO EEC) C (gas engines)",      "value": "EURO C" },
+          "17": { "description": "Engine manufacturer diagnostics (EMD)",               "value": "EMD" },
+          "18": { "description": "Engine Manufacturer Diagnostics Enhanced (EMD+)",     "value": "EMD+" },
+          "19": { "description": "Heavy Duty On-Board Diagnostics (Child/Partial)",     "value": "HD OBD-C" },
+          "20": { "description": "Heavy Duty On-Board Diagnostics",                     "value": "HD OBD" },
+          "21": { "description": "World Wide Harmonized OBD",                           "value": "WWH OBD" },
+          "23": { "description": "Heavy Duty Euro OBD Stage I without NOx Control",     "value": "HD EOBD-I" },
+          "24": { "description": "Heavy Duty Euro OBD Stage I with NOx Control",        "value": "HD EOBD-I N" },
+          "25": { "description": "Heavy Duty Euro OBD Stage II without NOx Control",    "value": "HD EOBD-II" },
+          "26": { "description": "Heavy Duty Euro OBD Stage II with NOx Control",       "value": "HD EOBD-II N" },
+          "27": { "description": "Heavy Duty ZEV",                                      "value": "HD-ZEV" },
+          "28": { "description": "Brazil OBD Phase 1",                                  "value": "OBDBr-1" },
+          "29": { "description": "Brazil OBD Phase 2 and Phase 2+",                     "value": "OBDBr-2" },
+          "30": { "description": "Korean OBD",                                          "value": "KOBD" },
+          "31": { "description": "India BS4 OBD I",                                     "value": "IOBD-I-BS4" },
+          "32": { "description": "India BS4 OBD II",                                    "value": "IOBD-II-BS4" },
+          "33": { "description": "Euro VI",                                             "value": "HD EOBD-VI" },
+          "34": { "description": "OBD, OBD II and HD OBD",                              "value": "OBD, OBD II and HD OBD" },
+          "35": { "description": "Brazil OBD Phase 3",                                  "value": "OBDBr-3" },
+          "36": { "description": "Motorcycle, Euro OBD-I",                              "value": "MC EOBD-I" },
+          "37": { "description": "Motorcycle, Euro OBD-II",                             "value": "MC EOBD-II" },
+          "38": { "description": "Motorcycle, China OBD-I",                             "value": "MC COBD-I" },
+          "39": { "description": "Motorcycle, Taiwan OBD-I",                            "value": "MC TOBD-I" },
+          "40": { "description": "Motorcycle, Japan OBD-I",                             "value": "MC JOBD-I" },
+          "41": { "description": "China Nationwide Stage 6",                            "value": "CN-OBD-6" },
+          "42": { "description": "Brazil OBD Phase 7",                                  "value": "OBDBr-P7" },
+          "43": { "description": "China Heavy Duty VI",                                 "value": "CN-HDOBD-VI" },
+          "44": { "description": "India BS6 OBD I",                                     "value": "IOBD-I-BS6" },
+          "45": { "description": "India BS6 OBD II",                                    "value": "IOBD-II-BS6" },
+          "46": { "description": "India BSVI HD OBD",                                   "value": "IHDOBD-BSVI" },
+          "47": { "description": "Brazil OBD Phase 8",                                  "value": "OBDBr-P8" },
+          "48": { "description": "Japan Heavy Duty OBD-II",                             "value": "HD-JOBD-II" },
+          "49": { "description": "Korea Heavy Duty OBD-II",                             "value": "HD-KOBD-II" },
+          "50": { "description": "China Off-Road IV OBD",                               "value": "CN-OROBD-IV" },
+          "51": { "description": "Light Duty ZEV, ACC-II",                              "value": "CARB ACC-II" },
+          "52": { "description": "Motorcycle, Japan OBD-II",                            "value": "MC JOBD-II" },
+          "53": { "description": "Motorcycle, California (CARB) OBD",                   "value": "MC CARB OBD" },
+          "54": { "description": "Motorcycle, Federal (EPA) OBD",                       "value": "MC EPA OBD" },
+          "55": { "description": "Motorcycle, 50-State (CARB & EPA) OBD",               "value": "MC CARB & EPA OBD" },
+          "56": { "description": "Heavy Duty ZEV, CARB ZEP",                            "value": "HD ZEV CARB ZEP" },
+          "57": { "description": "Light Duty ZEV, CARB ACC-II and EPA Tier 4 (GTR 22)", "value": "CARB ACC-II & EPA TIER4" },
+          "58": { "description": "Light Duty ZEV, EPA Tier 4 (GTR 22)",                 "value": "EPA TIER4" },
+          "59": { "description": "EPA HD OBD",                                          "value": "EPA HD" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "1D"}, "freq": 3600,
   "signals": [
@@ -231,7 +323,11 @@
     {"id": "EVAPCMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 29, "len": 1, "max": 1, "unit": "yesno" }, "name": "Evaporative system monitoring completed"},
     {"id": "HCATCMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 30, "len": 1, "max": 1, "unit": "yesno" }, "name": "Heated catalyst monitoring completed"},
     {"id": "CAT_CMPL",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 31, "len": 1, "max": 1, "unit": "yesno" }, "name": "Catalyst monitoring completed"},
-    {"id": "CIM_SUP_FLAG", "path": "DTCs.Generic.Support", "fmt": {"bix": 12, "len": 1, "map": {"0":{"description":"Spark ignition monitors supported","value":"SPARK"},"1":{"description":"Compression ignition monitors supported","value":"COMPRESSION"}} }, "name": "Compression ignition monitoring supported", "hidden": true}
+    {"id": "CIM_SUP_FLAG", "path": "DTCs.Generic.Support", "name": "Compression ignition monitoring supported", "hidden": true, "fmt": {"bix": 12, "len": 1, "map": {
+          "0": { "description": "Spark ignition monitors supported",       "value": "SPARK" },
+          "1": { "description": "Compression ignition monitors supported", "value": "COMPRESSION" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "42"}, "freq": 10,
   "signals": [
@@ -298,7 +394,41 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "51"}, "freq": 0.25,
   "signals": [
-    {"id": "FUEL_TYP", "path": "Engine.Generic", "fmt": { "len": 8, "map": {"1":{"description":"Gasoline/petrol","value":"GAS"},"10":{"description":"Bi-fuel vehicle using methanol","value":"BI_METH"},"11":{"description":"Bi-fuel vehicle using ethanol","value":"BI_ETH"},"12":{"description":"Bi-fuel vehicle using LPG","value":"BI_LPG"},"13":{"description":"Bi-fuel vehicle using CNG","value":"BI_CNG"},"14":{"description":"Bi-fuel vehicle using propane","value":"BI_PROP"},"15":{"description":"Bi-fuel vehicle using battery","value":"BI_ELEC"},"16":{"description":"Bi-fuel vehicle using battery and combustion engine for propulsion","value":"BI_MIX"},"17":{"description":"Hybrid vehicle using gasoline engine for propulsion","value":"HYB_GAS"},"18":{"description":"Hybrid vehicle using gasoline engine on ethanol for propulsion","value":"HYB_ETH"},"19":{"description":"Hybrid vehicle using diesel engine for propulsion","value":"HYB_DSL"},"2":{"description":"Methanol","value":"METH"},"20":{"description":"Hybrid vehicle using battery for propulsion","value":"HYB_ELEC"},"21":{"description":"Hybrid vehicle using battery and combustion engine for propulsion","value":"HYB_MIX"},"22":{"description":"Hybrid vehicle in regeneration mode","value":"HYB_REG"},"23":{"description":"Bi-fuel vehicle using diesel","value":"BI_DSL"},"24":{"description":"Bi-fuel vehicle using natural gas","value":"BI_NG"},"25":{"description":"Bi-fuel vehicle using diesel","value":"BI_DSL"},"26":{"description":"Natural gas","value":"NG"},"27":{"description":"Dual fuel vehicle using diesel and CNG","value":"DSL_CNG"},"28":{"description":"Dual fuel vehicle using diesel and LNG","value":"DSL_LNG"},"29":{"description":"Fuel cell utilizing hydrogen","value":"FC_H2"},"3":{"description":"Ethanol","value":"ETH"},"30":{"description":"Hydrogen Internal Combustion Engine","value":"HICE_HHO"},"31":{"description":"Kerosene","value":"KERO"},"32":{"description":"Heavy Fuel Oil","value":"HFO"},"4":{"description":"Diesel","value":"DSL"},"5":{"description":"Liquefied petroleum gas","value":"LPG"},"6":{"description":"Compressed natural gas","value":"CNG"},"7":{"description":"Propane","value":"PROP"},"8":{"description":"Battery/electric","value":"ELEC"},"9":{"description":"Bi-fuel vehicle using gasoline/petrol","value":"BI_GAS"}} }, "name": "Type of fuel currently being used by the vehicle"}
+    {"id": "FUEL_TYP", "path": "Engine.Generic", "name": "Type of fuel currently being used by the vehicle", "fmt": {"len": 8, "map": {
+          "1":  { "description": "Gasoline/petrol",                                                    "value": "GAS" },
+          "2":  { "description": "Methanol",                                                           "value": "METH" },
+          "3":  { "description": "Ethanol",                                                            "value": "ETH" },
+          "4":  { "description": "Diesel",                                                             "value": "DSL" },
+          "5":  { "description": "Liquefied petroleum gas",                                            "value": "LPG" },
+          "6":  { "description": "Compressed natural gas",                                             "value": "CNG" },
+          "7":  { "description": "Propane",                                                            "value": "PROP" },
+          "8":  { "description": "Battery/electric",                                                   "value": "ELEC" },
+          "9":  { "description": "Bi-fuel vehicle using gasoline/petrol",                              "value": "BI_GAS" },
+          "10": { "description": "Bi-fuel vehicle using methanol",                                     "value": "BI_METH" },
+          "11": { "description": "Bi-fuel vehicle using ethanol",                                      "value": "BI_ETH" },
+          "12": { "description": "Bi-fuel vehicle using LPG",                                          "value": "BI_LPG" },
+          "13": { "description": "Bi-fuel vehicle using CNG",                                          "value": "BI_CNG" },
+          "14": { "description": "Bi-fuel vehicle using propane",                                      "value": "BI_PROP" },
+          "15": { "description": "Bi-fuel vehicle using battery",                                      "value": "BI_ELEC" },
+          "16": { "description": "Bi-fuel vehicle using battery and combustion engine for propulsion", "value": "BI_MIX" },
+          "17": { "description": "Hybrid vehicle using gasoline engine for propulsion",                "value": "HYB_GAS" },
+          "18": { "description": "Hybrid vehicle using gasoline engine on ethanol for propulsion",     "value": "HYB_ETH" },
+          "19": { "description": "Hybrid vehicle using diesel engine for propulsion",                  "value": "HYB_DSL" },
+          "20": { "description": "Hybrid vehicle using battery for propulsion",                        "value": "HYB_ELEC" },
+          "21": { "description": "Hybrid vehicle using battery and combustion engine for propulsion",  "value": "HYB_MIX" },
+          "22": { "description": "Hybrid vehicle in regeneration mode",                                "value": "HYB_REG" },
+          "23": { "description": "Bi-fuel vehicle using diesel",                                       "value": "BI_DSL" },
+          "24": { "description": "Bi-fuel vehicle using natural gas",                                  "value": "BI_NG" },
+          "25": { "description": "Bi-fuel vehicle using diesel",                                       "value": "BI_DSL" },
+          "26": { "description": "Natural gas",                                                        "value": "NG" },
+          "27": { "description": "Dual fuel vehicle using diesel and CNG",                             "value": "DSL_CNG" },
+          "28": { "description": "Dual fuel vehicle using diesel and LNG",                             "value": "DSL_LNG" },
+          "29": { "description": "Fuel cell utilizing hydrogen",                                       "value": "FC_H2" },
+          "30": { "description": "Hydrogen Internal Combustion Engine",                                "value": "HICE_HHO" },
+          "31": { "description": "Kerosene",                                                           "value": "KERO" },
+          "32": { "description": "Heavy Fuel Oil",                                                     "value": "HFO" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "52"}, "freq": 1,
   "signals": [
@@ -354,7 +484,13 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5F"}, "freq": 60,
   "signals": [
-    {"id": "EMIS_SUP", "path": "Emissions.Generic", "fmt": { "len": 8, "map": {"14":{"description":"Heavy duty vehicles (EURO IV) B1","value":"EURO IV B1"},"15":{"description":"Heavy duty vehicles (EURO V) B2","value":"EURO V B2"},"16":{"description":"Heavy duty vehicles (EURO EEV) C","value":"EURO C"},"17":{"description":"Heavy Duty Vehicles (Euro VI)","value":"EURO VI"}} }, "name": "Emission requirements to which vehicle is designed"}
+    {"id": "EMIS_SUP", "path": "Emissions.Generic", "name": "Emission requirements to which vehicle is designed", "fmt": {"len": 8, "map": {
+          "14": { "description": "Heavy duty vehicles (EURO IV) B1", "value": "EURO IV B1" },
+          "15": { "description": "Heavy duty vehicles (EURO V) B2",  "value": "EURO V B2" },
+          "16": { "description": "Heavy duty vehicles (EURO EEV) C", "value": "EURO C" },
+          "17": { "description": "Heavy Duty Vehicles (Euro VI)",    "value": "EURO VI" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "61"}, "freq": 0.25,
   "signals": [
@@ -471,8 +607,18 @@
     {"id": "BP_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Boost pressure sensor A",                   "description": "Actual turbocharger/supercharger A boost pressure."},
     {"id": "BP_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Commanded boost pressure B",                "description": "Turbocharger/supercharger B commanded boost pressure."},
     {"id": "BP_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 56, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Boost pressure sensor B",                   "description": "Actual turbocharger/supercharger B boost pressure."},
-    {"id": "BP_B", "path": "Engine.Generic.Internal", "fmt": {"bix": 76, "len": 2, "map": {"1":{"description":"Open loop","value":"BP_B_OL"},"2":{"description":"Closed loop","value":"BP_B_CL"},"3":{"description":"Fault","value":"BP_B_FAULT"}} }, "name": "Boost bressure A control status"},
-    {"id": "BP_A", "path": "Engine.Generic.Internal", "fmt": {"bix": 78, "len": 2, "map": {"1":{"description":"Open loop","value":"BP_A_OL"},"2":{"description":"Closed loop","value":"BP_A_CL"},"3":{"description":"Fault","value":"BP_A_FAULT"}} }, "name": "Boost bressure A control status"}
+    {"id": "BP_B", "path": "Engine.Generic.Internal", "name": "Boost bressure A control status", "fmt": {"bix": 76, "len": 2, "map": {
+          "1": { "description": "Open loop",   "value": "BP_B_OL" },
+          "2": { "description": "Closed loop", "value": "BP_B_CL" },
+          "3": { "description": "Fault",       "value": "BP_B_FAULT" }
+        }}
+    },
+    {"id": "BP_A", "path": "Engine.Generic.Internal", "name": "Boost bressure A control status", "fmt": {"bix": 78, "len": 2, "map": {
+          "1": { "description": "Open loop",   "value": "BP_A_OL" },
+          "2": { "description": "Closed loop", "value": "BP_A_CL" },
+          "3": { "description": "Fault",       "value": "BP_A_FAULT" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "72"}, "freq": 0.25,
   "signals": [
@@ -514,8 +660,17 @@
     {"id": "HEV_MODE_SUP",   "path": "Battery.Generic.Internal", "fmt": {"bix": 7,  "len": 1,  "max": 1,                                                "unit": "noyes" }, "name": "Hybrid/EV Vehicle Charging State supported?",          "hidden": true},
     {"id": "HEV_BATT_V",     "path": "Battery.Generic",          "fmt": {"bix": 16, "len": 16, "max": 1023.98,                 "div": 64,               "unit": "volts" }, "name": "Hybrid/EV Battery System Voltage"},
     {"id": "HEV_BATT_A",     "path": "Battery.Generic",          "fmt": {"bix": 32, "len": 16, "max": 3276.7,  "min": -3276.8, "div": 10, "sign": true, "unit": "amps"  }, "name": "Hybrid/EV Battery System Current"},
-    {"id": "HEV_MODE",  "path": "Battery.Generic", "fmt": {          "len": 1, "map": {"0":{"description":"Charge sustaining mode","value":"CSM"},"1":{"description":"Charge depleting mode","value":"CDM"}}                                                            }, "name": "Hybrid/EV Vehicle Charging State"},
-    {"id": "EHEV_MODE", "path": "Battery.Generic", "fmt": {"bix": 1, "len": 2, "map": {"0":{"description":"Charge sustaining mode","value":"CSM"},"1":{"description":"Charge depleting mode","value":"CDM"},"2":{"description":"Charge increasing mode","value":"CIM"}} }, "name": "Enhanced Hybrid/EV Vehicle Charging State"}
+    {"id": "HEV_MODE", "path": "Battery.Generic", "name": "Hybrid/EV Vehicle Charging State", "fmt": {"len": 1, "map": {
+          "0": { "description": "Charge sustaining mode", "value": "CSM" },
+          "1": { "description": "Charge depleting mode",  "value": "CDM" }
+        }}
+    },
+    {"id": "EHEV_MODE", "path": "Battery.Generic", "name": "Enhanced Hybrid/EV Vehicle Charging State", "fmt": {"bix": 1, "len": 2, "map": {
+          "0": { "description": "Charge sustaining mode", "value": "CSM" },
+          "1": { "description": "Charge depleting mode",  "value": "CDM" },
+          "2": { "description": "Charge increasing mode", "value": "CIM" }
+        }}
+    }
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "9D"}, "freq": 0.25,
   "signals": [
