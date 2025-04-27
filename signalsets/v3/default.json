@@ -534,10 +534,10 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "67"}, "freq": 0.5,
   "signals": [
-    {"id": "ECT 2_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 2 supported?",   "hidden": true},
-    {"id": "ECT 1_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 1 supported?",   "hidden": true},
-    {"id": "ECT 1",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 1"},
-    {"id": "ECT 2",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 2"}
+    {"id": "ECT_2_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 2 supported?",   "hidden": true},
+    {"id": "ECT_1_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 1 supported?",   "hidden": true},
+    {"id": "ECT_1",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 1"},
+    {"id": "ECT_2",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature 2"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "68"}, "freq": 0.25,
   "signals": [
