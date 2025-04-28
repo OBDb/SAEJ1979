@@ -2,63 +2,19 @@ import glob
 import os
 import pytest
 from pathlib import Path
-from typing import Dict, Any
 
 # These will be imported from the schemas repository
-from schemas.python.can_frame import CANIDFormat
 from schemas.python.json_formatter import format_file
-from schemas.python.signals_testing import obd_testrunner
+from schemas.python.signals_testing import find_test_yaml_files, register_test_classes
 
 REPO_ROOT = Path(__file__).parent.parent.absolute()
+TEST_CASES_DIR = os.path.join(Path(__file__).parent, 'test_cases')
 
-TEST_CASES = [
-    # TODO: Implement real tests below with vehicle data.
-    # 2019 model year
-    {
-        "model_year": "2019",
-        "signalset": "default.json",
-        "tests": [
-            # # Tire pressures
-            # ("72E05622813028C", {"F150_TP_FL": 32.6}),
-            # ("72E056228140273", {"F150_TP_FR": 31.35}),
-            # ("72E056228150291", {"F150_TP_RRO": 32.85}),
-            # ("72E05622816026E", {"F150_TP_RLO": 31.1}),
-            # ("72E056228170000", {"F150_TP_RRI": 0.0}),
-            # ("72E056228180000", {"F150_TP_RLI": 0.0}),
-        ]
-    },
-]
+# Find all test files grouped by model year
+test_files_by_year = find_test_yaml_files(TEST_CASES_DIR)
 
-def load_signalset(filename: str) -> str:
-    """Load a signalset JSON file from the standard location."""
-    signalset_path = REPO_ROOT / "signalsets" / "v3" / filename
-    with open(signalset_path) as f:
-        return f.read()
-
-@pytest.mark.parametrize(
-    "test_group",
-    TEST_CASES,
-    ids=lambda test_case: f"MY{test_case['model_year']}"
-)
-def test_signals(test_group: Dict[str, Any]):
-    """Test signal decoding against known responses."""
-    signalset_json = load_signalset(test_group["signalset"])
-
-    # Run each test case in the group
-    for response_hex, expected_values in test_group["tests"]:
-        try:
-            obd_testrunner(
-                signalset_json,
-                response_hex,
-                expected_values,
-                can_id_format=CANIDFormat.ELEVEN_BIT
-            )
-        except Exception as e:
-            pytest.fail(
-                f"Failed on response {response_hex} "
-                f"(Model Year: {test_group['model_year']}, "
-                f"Signalset: {test_group['signalset']}): {e}"
-            )
+# Register test classes dynamically
+register_test_classes(test_files_by_year)
 
 def get_json_files():
     """Get all JSON files from the signalsets/v3 directory."""
@@ -81,4 +37,5 @@ def test_formatting(test_file):
         assert f.read() == formatted
 
 if __name__ == '__main__':
-    pytest.main([__file__])
+    # Use pytest's main function with xdist arguments
+    pytest.main([__file__, '-xvs', '-n', 'auto'])

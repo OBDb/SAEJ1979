@@ -5,7 +5,35 @@
             "label": "Format Signals",
             "type": "shell",
             "command": "find signalsets/v3 -type f -exec python3 tests/schemas/cli.py '{}' --output '{}' \\;",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "Update YAML Tests",
+            "type": "shell",
+            "command": "python3 ${workspaceFolder}/tests/update_yaml_tests.py ${input:testUpdateOptions}",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "group": "test"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "testUpdateOptions",
+            "type": "pickString",
+            "description": "Choose test update options",
+            "options": [
+                "--dry-run --verbose",
+                "--verbose",
+                "--year 2022 --verbose",
+                "--year 2023 --verbose",
+                "--year 2024 --verbose",
+                "--year 2025 --verbose"
+            ],
+            "default": "--dry-run --verbose"
         }
     ]
 }

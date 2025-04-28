@@ -1,6 +1,9 @@
 {
     "python.testing.pytestArgs": [
-        "tests"
+        "tests",
+        "-xvs",
+        "-n",
+        "auto"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,

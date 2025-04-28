@@ -7,7 +7,8 @@
                 "ms-python.python",
                 "ms-python.vscode-pylance",
                 "GitHub.vscode-github-actions",
-                "GitHub.vscode-pull-request-github"
+                "GitHub.vscode-pull-request-github",
+                "ClutchEngineering.obdb-tooling"
             ],
             "settings": {
                 "task.quickOpen.skip": true,
