@@ -151,6 +151,16 @@
     {"id": "O2S12",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 1, Sensor 2"},
     {"id": "SHRTFT11", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "SHRTFT associated with O2S12"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "18"}, "freq": 1,
+  "signals": [
+    {"id": "O2S21",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 2, Sensor 1"},
+    {"id": "SHRTFT21", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "SHRTFT associated with O2S21"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "19"}, "freq": 1,
+  "signals": [
+    {"id": "O2S22",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 2, Sensor 2"},
+    {"id": "SHRTFT22", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "SHRTFT associated with O2S22"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "1C"}, "freq": 3600,
   "signals": [
     {"id": "OBDSUP", "path": "OBD.Generic", "name": "OBD requirements to which vehicle is designed", "fmt": {"len": 8, "map": {
@@ -248,8 +258,8 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "24"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBDA11_WIDE", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,  "div": 32768, "unit": "scalar" }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1"},
-    {"id": "O2S11_WIDE",    "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 16, "len": 16, "max": 7.999, "div": 8196,  "unit": "volts"  }, "name": "Wide Range O2S Voltage, O2 Sensor Bank 1, Sensor 1"}
+    {"id": "LAMBDA11_VOLT", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,  "div": 32768, "unit": "scalar" }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1"},
+    {"id": "O2S11_VOLT",    "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 16, "len": 16, "max": 7.999, "div": 8196,  "unit": "volts"  }, "name": "Wide Range O2S Voltage, O2 Sensor Bank 1, Sensor 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2C"}, "freq": 1,
   "signals": [
@@ -282,6 +292,11 @@
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "33"}, "freq": 0.25,
   "signals": [
     {"id": "BARO", "path": "Engine.Generic", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure", "description": "Normally obtained from one of a dedicated barometric sensor, a MAP sensor at key-on and during certain modes of driving, or inferred from a MAF sensor and other inputs during certain modes of driving. The control module reports BARO from whatever source it is derived from."}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "34"}, "freq": 0.25,
+  "signals": [
+    {"id": "LAMBDA11_CURRENT", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,                 "div": 32768,              "unit": "scalar"    }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1"},
+    {"id": "O2S11_CURRENT",    "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 16, "len": 16, "max": 127.996, "min": -128, "div": 256,   "add": -128, "unit": "milliamps" }, "name": "Wide Range O2S Current, O2 Sensor Bank 1, Sensor 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "3C"}, "freq": 0.25,
   "signals": [
@@ -568,6 +583,25 @@
     {"id": "EGR_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR B duty cycle/position"},
     {"id": "EGR_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR B duty cycle/position"},
     {"id": "EGR_B_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR B error"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "6B"}, "freq": 0.25,
+  "signals": [
+    {"id": "EGRTD_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {           "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor D (Bank 2, Sensor 2) Wide Range supported?", "hidden": true},
+    {"id": "EGRTB_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 1,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor B (Bank 2, Sensor 1) Wide Range supported?", "hidden": true},
+    {"id": "EGRTC_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor C (Bank 1, Sensor 2) Wide Range supported?", "hidden": true},
+    {"id": "EGRTA_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor A (Bank 1, Sensor 1) Wide Range supported?", "hidden": true},
+    {"id": "EGRTD_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor D (Bank 2, Sensor 2) supported?",            "hidden": true},
+    {"id": "EGRTB_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor B (Bank 2, Sensor 1) supported?",            "hidden": true},
+    {"id": "EGRTC_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor C (Bank 1, Sensor 2) supported?",            "hidden": true},
+    {"id": "EGRTA_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor A (Bank 1, Sensor 1) supported?",            "hidden": true},
+    {"id": "EGRTA",        "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40,           "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor A (Bank 1, Sensor 1)"},
+    {"id": "EGRTA_WIDE",   "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 980, "min": -40, "mul": 4, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor A (Bank 1, Sensor 1), wide"},
+    {"id": "EGRTC",        "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40,           "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor C (Bank 1, Sensor 2)"},
+    {"id": "EGRTC_WIDE",   "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 980, "min": -40, "mul": 4, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor C (Bank 1, Sensor 2), wide"},
+    {"id": "EGRTB",        "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40,           "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor B (Bank 2, Sensor 1)"},
+    {"id": "EGRTB_WIDE",   "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 980, "min": -40, "mul": 4, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor B (Bank 2, Sensor 1), wide"},
+    {"id": "EGRTD",        "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40,           "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor D (Bank 2, Sensor 2)"},
+    {"id": "EGRTD_WIDE",   "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 980, "min": -40, "mul": 4, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor D (Bank 2, Sensor 2), wide"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "6C"}, "freq": 0.25,
   "signals": [

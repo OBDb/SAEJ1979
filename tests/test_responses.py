@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Dict, Any
 
 # These will be imported from the schemas repository
-from schemas.python.can_frame import CANIDFormat
+from schemas.python.can.can_frame import CANIDFormat
 from schemas.python.json_formatter import format_file
 from schemas.python.signals_testing import obd_testrunner
 
