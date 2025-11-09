@@ -72,21 +72,21 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "06"}, "freq": 0.25,
   "signals": [
-    {"id": "SHRTFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 1)", "description": "Correction being used by the closed-loop fuel algorithm."}
+    {"id": "SHRTFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 1)", "description": "Correction being used by the closed-loop fuel algorithm."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "07"}, "freq": 1,
   "signals": [
-    {"id": "LONGFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 1)"}
+    {"id": "LONGFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "08"}, "freq": 1,
   "signals": [
-    {"id": "SHRTFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 2)", "description": "Correction being used by the closed-loop fuel algorithm."},
-    {"id": "SHRTFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 4)", "description": "Correction being used by the closed-loop fuel algorithm."}
+    {"id": "SHRTFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 2)", "description": "Correction being used by the closed-loop fuel algorithm."},
+    {"id": "SHRTFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 4)", "description": "Correction being used by the closed-loop fuel algorithm."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "09"}, "freq": 1,
   "signals": [
-    {"id": "LONGFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 2)"},
-    {"id": "LONGFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 4)"}
+    {"id": "LONGFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term fuel trim (bank 2)"},
+    {"id": "LONGFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term fuel trim (bank 4)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0A"}, "freq": 1,
   "signals": [
@@ -144,22 +144,22 @@
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "14"}, "freq": 1,
   "signals": [
     {"id": "O2S11",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 1, Sensor 1"},
-    {"id": "SHRTFT11", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "SHRTFT associated with O2S11"}
+    {"id": "SHRTFT11", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "SHRTFT associated with O2S11"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "15"}, "freq": 1,
   "signals": [
     {"id": "O2S12",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 1, Sensor 2"},
-    {"id": "SHRTFT11", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "SHRTFT associated with O2S12"}
+    {"id": "SHRTFT11", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "SHRTFT associated with O2S12"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "18"}, "freq": 1,
   "signals": [
     {"id": "O2S21",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 2, Sensor 1"},
-    {"id": "SHRTFT21", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "SHRTFT associated with O2S21"}
+    {"id": "SHRTFT21", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "SHRTFT associated with O2S21"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "19"}, "freq": 1,
   "signals": [
     {"id": "O2S22",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 2, Sensor 2"},
-    {"id": "SHRTFT22", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "SHRTFT associated with O2S22"}
+    {"id": "SHRTFT22", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "SHRTFT associated with O2S22"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "1C"}, "freq": 3600,
   "signals": [
@@ -244,9 +244,9 @@
   "signals": [
     {"id": "RUNTM", "path": "Clocks.Generic", "fmt": { "len": 16, "max": 65535, "unit": "seconds" }, "name": "Time since engine start", "description": "Increments while the engine is running. Freezes if the engine stalls. Resets to zero during every control module power-up and when entering the key-on, engine off position. Limited to 65,535 seconds and will not wrap around to zero."}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "21"}, "freq": 1,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "21"}, "freq": 5,
   "signals": [
-    {"id": "MIL_DIST", "path": "DTCs.Generic", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance travelled while MIL was activated", "description": "Resets to zero when MIL changes from deactivated to activated, if diagnostic information is cleared, or if at least 40 warm-up cycles occur without MIL being activated."}
+    {"id": "MIL_DIST", "path": "DTCs.Generic", "fmt": { "len": 16, "max": 65535, "unit": "kilometers" }, "name": "Distance traveled while MIL was activated", "description": "Resets to zero when MIL changes from deactivated to activated, if diagnostic information is cleared, or if at least 40 warm-up cycles occur without MIL being activated."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "22"}, "freq": 0.25,
   "signals": [
@@ -267,7 +267,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2D"}, "freq": 1,
   "signals": [
-    {"id": "EGR_ERR", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR error"}
+    {"id": "EGR_ERR", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "EGR error"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2E"}, "freq": 1,
   "signals": [
@@ -459,19 +459,19 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "55"}, "freq": 0.25,
   "signals": [
-    {"id": "STSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 1)"}
+    {"id": "STSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "56"}, "freq": 0.25,
   "signals": [
-    {"id": "LGSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 1)"}
+    {"id": "LGSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "57"}, "freq": 0.25,
   "signals": [
-    {"id": "STSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 2)"}
+    {"id": "STSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 2)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "58"}, "freq": 0.25,
   "signals": [
-    {"id": "LGSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 2)"}
+    {"id": "LGSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 2)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "59"}, "freq": 0.25,
   "signals": [
@@ -547,7 +547,7 @@
     {"id": "MAFA",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 16, "max": 2047.96875, "div": 32, "unit": "gramsPerSecond" }, "name": "Mass Air Flow Sensor A"},
     {"id": "MAFB",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "gramsPerSecond" }, "name": "Mass Air Flow Sensor B"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "67"}, "freq": 0.5,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "67"}, "freq": 1,
   "signals": [
     {"id": "ECT_2_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 2 supported?",   "hidden": true},
     {"id": "ECT_1_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                           "unit": "scalar"  }, "name": "Is ECT sensor 1 supported?",   "hidden": true},
@@ -579,10 +579,10 @@
     {"id": "EGR_A_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Commanded EGR A supported",           "hidden": true},
     {"id": "EGR_A_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR A duty cycle/position"},
     {"id": "EGR_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR A duty cycle/position"},
-    {"id": "EGR_A_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR A error"},
+    {"id": "EGR_A_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "EGR A error"},
     {"id": "EGR_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR B duty cycle/position"},
     {"id": "EGR_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR B duty cycle/position"},
-    {"id": "EGR_B_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR B error"}
+    {"id": "EGR_B_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "EGR B error"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "6B"}, "freq": 0.25,
   "signals": [
