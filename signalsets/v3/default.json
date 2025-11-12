@@ -64,15 +64,15 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "04"}, "freq": 0.25,
   "signals": [
-    {"id": "LOAD_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Calculated engine load", "description": "Represents the amount of work the engine is doing. Expected to reach 100% at wide open throttle/wide open pedal at any altitude, temperature or rpm for both naturally aspirated and boosted engines. If engine load is limited for powertrain protection e.g. engine/turbocharger protection, this value may not reach 100%. For hybrid vehicles, indicates the torque produced only by the internal combustion engine, not the torque being delivered by the entire powertrain. For electric vehicles, the meaning of this parameter is undefined."}
+    {"id": "LOAD_PCT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Calculated engine load", "suggestedMetric": "engineLoad", "description": "Represents the amount of work the engine is doing. Expected to reach 100% at wide open throttle/wide open pedal at any altitude, temperature or rpm for both naturally aspirated and boosted engines. If engine load is limited for powertrain protection e.g. engine/turbocharger protection, this value may not reach 100%. For hybrid vehicles, indicates the torque produced only by the internal combustion engine, not the torque being delivered by the entire powertrain. For electric vehicles, the meaning of this parameter is undefined."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "05"}, "freq": 0.5,
   "signals": [
-    {"id": "ECT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature", "description": "Your engine temperature must operate within a certain temperature range to operate efficiently and safely. If it runs too hot, then your engine could be permanently damaged. If it runs too cold, then your engine will use more fuel than necessary."}
+    {"id": "ECT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine coolant temperature", "suggestedMetric": "engineCoolantTemperature", "description": "Your engine temperature must operate within a certain temperature range to operate efficiently and safely. If it runs too hot, then your engine could be permanently damaged. If it runs too cold, then your engine will use more fuel than necessary."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "06"}, "freq": 0.25,
   "signals": [
-    {"id": "SHRTFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 1)", "description": "Correction being used by the closed-loop fuel algorithm."}
+    {"id": "SHRTFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 1)", "suggestedMetric": "shortTermFuelTrim", "description": "Correction being used by the closed-loop fuel algorithm."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "07"}, "freq": 1,
   "signals": [
@@ -80,7 +80,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "08"}, "freq": 1,
   "signals": [
-    {"id": "SHRTFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 2)", "description": "Correction being used by the closed-loop fuel algorithm."},
+    {"id": "SHRTFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 2)", "suggestedMetric": "shortTermFuelTrim",                                    "description": "Correction being used by the closed-loop fuel algorithm."},
     {"id": "SHRTFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 4)", "description": "Correction being used by the closed-loop fuel algorithm."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "09"}, "freq": 1,
@@ -114,11 +114,11 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "10"}, "freq": 0.25,
   "signals": [
-    {"id": "MAF", "path": "Engine.Generic", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "gramsPerSecond" }, "name": "Air flow rate from mass air flow sensor"}
+    {"id": "MAF", "path": "Engine.Generic", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "gramsPerSecond" }, "name": "Air flow rate from mass air flow sensor", "suggestedMetric": "massAirFlow"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "11"}, "freq": 0.25,
   "signals": [
-    {"id": "TP", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position", "description": "Throttle position at idle will usually be more than 0%, and throttle position at wide open throttle will usually be less than 100%."}
+    {"id": "TP", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position", "suggestedMetric": "throttlePosition", "description": "Throttle position at idle will usually be more than 0%, and throttle position at wide open throttle will usually be less than 100%."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "12"}, "freq": 60,
   "signals": [
@@ -258,7 +258,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "24"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBDA11_VOLT", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,  "div": 32768, "unit": "scalar" }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1"},
+    {"id": "LAMBDA11_VOLT", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,  "div": 32768, "unit": "scalar" }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1",   "suggestedMetric": "o2Lambda"},
     {"id": "O2S11_VOLT",    "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 16, "len": 16, "max": 7.999, "div": 8196,  "unit": "volts"  }, "name": "Wide Range O2S Voltage, O2 Sensor Bank 1, Sensor 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2C"}, "freq": 1,
@@ -295,7 +295,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "34"}, "freq": 0.25,
   "signals": [
-    {"id": "LAMBDA11_CURRENT", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,                 "div": 32768,              "unit": "scalar"    }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1"},
+    {"id": "LAMBDA11_CURRENT", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,                 "div": 32768,              "unit": "scalar"    }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1",   "suggestedMetric": "o2Lambda"},
     {"id": "O2S11_CURRENT",    "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 16, "len": 16, "max": 127.996, "min": -128, "div": 256,   "add": -128, "unit": "milliamps" }, "name": "Wide Range O2S Current, O2 Sensor Bank 1, Sensor 1"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "3C"}, "freq": 0.25,
@@ -354,7 +354,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "44"}, "freq": 0.25,
   "signals": [
-    {"id": "EQ_RAT", "path": "Engine.Generic", "fmt": { "len": 16, "max": 1.99, "mul": 2, "div": 65535, "unit": "scalar" }, "name": "Commanded equivalence ratio", "description": "Fuel systems that utilize conventional oxygen sensor display the inverse of the commanded open loop equivalence ratio (also known as lambda) while the fuel control system is in open loop. Will indicate 1.000 while in closed-loop fuel."}
+    {"id": "EQ_RAT", "path": "Engine.Generic", "fmt": { "len": 16, "max": 1.99, "mul": 2, "div": 65535, "unit": "scalar" }, "name": "Commanded equivalence ratio", "suggestedMetric": "commandedLambda", "description": "Fuel systems that utilize conventional oxygen sensor display the inverse of the commanded open loop equivalence ratio (also known as lambda) while the fuel control system is in open loop. Will indicate 1.000 while in closed-loop fuel."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "45"}, "freq": 0.25,
   "signals": [
@@ -366,11 +366,11 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "47"}, "freq": 0.25,
   "signals": [
-    {"id": "TP_B", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position B"}
+    {"id": "TP_B", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position B", "suggestedMetric": "throttlePosition"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "48"}, "freq": 0.25,
   "signals": [
-    {"id": "TP_C", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position C"}
+    {"id": "TP_C", "path": "Control.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute throttle position C", "suggestedMetric": "throttlePosition"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "49"}, "freq": 0.25,
   "signals": [
@@ -487,7 +487,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5C"}, "freq": 1,
   "signals": [
-    {"id": "EOT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 210, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature"}
+    {"id": "EOT", "path": "Engine.Generic", "fmt": { "len": 8, "max": 210, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature", "suggestedMetric": "engineOilTemperature"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5D"}, "freq": 0.25,
   "signals": [
@@ -495,7 +495,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5E"}, "freq": 0.25,
   "signals": [
-    {"id": "FUEL_RATE", "path": "Fuel.Generic", "fmt": { "len": 16, "max": 3212.75, "div": 20, "unit": "liters" }, "name": "Engine fuel rate", "description": "Measured in units per hour"}
+    {"id": "FUEL_RATE", "path": "Fuel.Generic", "fmt": { "len": 16, "max": 3212.75, "div": 20, "unit": "litersPerHour" }, "name": "Engine fuel rate", "suggestedMetric": "fuelRate", "description": "Measured in units per hour"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5F"}, "freq": 60,
   "signals": [
@@ -544,8 +544,8 @@
   "signals": [
     {"id": "MAFB_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1,  "max": 1,                     "unit": "noyes"          }, "name": "MAF Sensor B supported", "hidden": true},
     {"id": "MAFA_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1,  "max": 1,                     "unit": "noyes"          }, "name": "MAF Sensor A supported", "hidden": true},
-    {"id": "MAFA",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 16, "max": 2047.96875, "div": 32, "unit": "gramsPerSecond" }, "name": "Mass Air Flow Sensor A"},
-    {"id": "MAFB",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "gramsPerSecond" }, "name": "Mass Air Flow Sensor B"}
+    {"id": "MAFA",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 16, "max": 2047.96875, "div": 32, "unit": "gramsPerSecond" }, "name": "Mass Air Flow Sensor A", "suggestedMetric": "massAirFlow"},
+    {"id": "MAFB",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "gramsPerSecond" }, "name": "Mass Air Flow Sensor B", "suggestedMetric": "massAirFlow"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "67"}, "freq": 1,
   "signals": [
@@ -556,18 +556,18 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "68"}, "freq": 0.25,
   "signals": [
-    {"id": "IAT_23_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 2, Sensor 3 supported",           "hidden": true},
-    {"id": "IAT_22_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 2, Sensor 2 supported",           "hidden": true},
-    {"id": "IAT_21_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 1 supported",           "hidden": true},
-    {"id": "IAT_13_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 3 supported",           "hidden": true},
-    {"id": "IAT_12_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 2 supported",           "hidden": true},
-    {"id": "IAT_11_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 1 supported",           "hidden": true},
-    {"id": "IAT_11",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 1"},
-    {"id": "IAT_12",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 2"},
-    {"id": "IAT_13",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 3"},
-    {"id": "IAT_21",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 1"},
-    {"id": "IAT_22",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 2"},
-    {"id": "IAT_23",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 3"}
+    {"id": "IAT_23_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                                           "unit": "noyes"   }, "name": "IAT Bank 2, Sensor 3 supported",           "hidden": true},
+    {"id": "IAT_22_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                                           "unit": "noyes"   }, "name": "IAT Bank 2, Sensor 2 supported",           "hidden": true},
+    {"id": "IAT_21_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 1 supported",           "hidden": true},
+    {"id": "IAT_13_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 3 supported",           "hidden": true},
+    {"id": "IAT_12_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 2 supported",           "hidden": true},
+    {"id": "IAT_11_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                                           "unit": "noyes"   }, "name": "IAT Bank 1, Sensor 1 supported",           "hidden": true},
+    {"id": "IAT_11",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 1"},
+    {"id": "IAT_12",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 2"},
+    {"id": "IAT_13",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 1, sensor 3"},
+    {"id": "IAT_21",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 1"},
+    {"id": "IAT_22",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 2"},
+    {"id": "IAT_23",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 215, "min": -40, "add": -40, "nullmin": -40, "unit": "celsius" }, "name": "Intake air temperature, bank 2, sensor 3"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "69"}, "freq": 0.25,
   "signals": [
@@ -680,7 +680,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "8D"}, "freq": 0.25,
   "signals": [
-    {"id": "TP_G", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute Throttle Position G"}
+    {"id": "TP_G", "path": "Engine.Generic", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute Throttle Position G", "suggestedMetric": "throttlePosition"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "8E"}, "freq": 0.25,
   "signals": [
