@@ -1,13 +1,15 @@
 {
     "name": "Python Development",
-    "image": "mcr.microsoft.com/devcontainers/python:3",
+    "image": "ghcr.io/obdb/devcontainer:latest",
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
                 "GitHub.vscode-github-actions",
-                "GitHub.vscode-pull-request-github"
+                "GitHub.vscode-pull-request-github",
+                "ClutchEngineering.obdb-tooling",
+                "anthropic.claude-code"
             ],
             "settings": {
                 "task.quickOpen.skip": true,
@@ -22,7 +24,6 @@
             }
         }
     },
-    "postCreateCommand": "pip install pytest pyyaml pytest-xdist",
-    "postAttachCommand": "cd tests/schemas && git pull && cd ../.. || git clone --depth=1 https://github.com/OBDb/.schemas.git tests/schemas",
+    "postAttachCommand": "/usr/local/bin/setup-obdb-dev.sh",
     "remoteUser": "vscode"
 }
