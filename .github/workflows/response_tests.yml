@@ -8,39 +8,58 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Checkout schemas repo
-        uses: actions/checkout@v4
+      - name: Run tests in devcontainer
+        id: test
+        uses: devcontainers/ci@v0.3
         with:
-          repository: OBDb/.schemas
-          path: tests/schemas
+          imageName: ghcr.io/obdb/devcontainer
+          push: never
+          env: |
+            GITHUB_SERVER_URL=${{ github.server_url }}
+            GITHUB_REPOSITORY=${{ github.repository }}
+            GITHUB_SHA=${{ github.sha }}
+            GITHUB_RUN_ID=${{ github.run_id }}
+          runCmd: |
+            pytest tests/ --ignore=tests/schemas -xvs -n auto > ./test-output.txt 2>&1
+            TEST_EXIT=$?
+            cat ./test-output.txt
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+            # Format results for PR comment with all required arguments
+            /usr/local/bin/format-test-results.sh \
+              test-output.txt \
+              $TEST_EXIT \
+              "$GITHUB_SERVER_URL" \
+              "$GITHUB_REPOSITORY" \
+              "$GITHUB_SHA" \
+              "$GITHUB_RUN_ID" \
+              > ./test-results.md || true
+
+            # Exit with the actual test result
+            exit $TEST_EXIT
+
+      - name: Set test results output
+        if: always() && github.event_name == 'pull_request'
+        run: |
+          if [ -f test-results.md ]; then
+            {
+              echo 'TEST_RESULTS<<EOFMARKER'
+              cat test-results.md
+              echo 'EOFMARKER'
+            } >> $GITHUB_ENV
+          fi
+
+      - name: Comment test results on PR
+        if: always() && github.event_name == 'pull_request'
+        uses: thollander/actions-comment-pull-request@v2
         with:
-          python-version: '3.13'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r tests/schemas/requirements.txt
-
-      - name: Run tests
-        id: run_tests
-        run: |
-          pytest tests/ --ignore=tests/schemas -xvs -n auto
-        continue-on-error: true
-
-      - name: Print fix instructions
-        if: steps.run_tests.outcome == 'failure'
-        run: |
-          echo "::notice title=How to fix failed tests::To fix the failed tests, run: python3 tests/update_yaml_tests.py --verbose"
-          exit 1
+          message: ${{ env.TEST_RESULTS }}
+          comment_tag: response-tests

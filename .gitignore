@@ -1,3 +1,6 @@
 tests/schemas/
 __pycache__
 .claude/skills
+.claude/settings.local.json
+tests/*.py
+.vscode/*.json

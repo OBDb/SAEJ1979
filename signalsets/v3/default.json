@@ -72,21 +72,21 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "06"}, "freq": 0.25,
   "signals": [
-    {"id": "SHRTFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 1)", "suggestedMetric": "shortTermFuelTrim", "description": "Correction being used by the closed-loop fuel algorithm."}
+    {"id": "SHRTFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 1)", "suggestedMetric": "shortTermFuelTrim", "description": "Correction being used by the closed-loop fuel algorithm."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "07"}, "freq": 1,
   "signals": [
-    {"id": "LONGFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term fuel trim (bank 1)"}
+    {"id": "LONGFT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "08"}, "freq": 1,
   "signals": [
-    {"id": "SHRTFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 2)", "suggestedMetric": "shortTermFuelTrim",                                    "description": "Correction being used by the closed-loop fuel algorithm."},
-    {"id": "SHRTFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term fuel trim (bank 4)", "description": "Correction being used by the closed-loop fuel algorithm."}
+    {"id": "SHRTFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 2)", "suggestedMetric": "shortTermFuelTrim",                                    "description": "Correction being used by the closed-loop fuel algorithm."},
+    {"id": "SHRTFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term fuel trim (bank 4)", "description": "Correction being used by the closed-loop fuel algorithm."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "09"}, "freq": 1,
   "signals": [
-    {"id": "LONGFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term fuel trim (bank 2)"},
-    {"id": "LONGFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term fuel trim (bank 4)"}
+    {"id": "LONGFT2", "path": "Engine.Generic", "fmt": {          "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 2)"},
+    {"id": "LONGFT4", "path": "Engine.Generic", "fmt": {"bix": 8, "len": 8, "max": 99.2, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term fuel trim (bank 4)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0A"}, "freq": 1,
   "signals": [
@@ -267,7 +267,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2D"}, "freq": 1,
   "signals": [
-    {"id": "EGR_ERR", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "EGR error"}
+    {"id": "EGR_ERR", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR error"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "2E"}, "freq": 1,
   "signals": [
@@ -459,19 +459,19 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "55"}, "freq": 0.25,
   "signals": [
-    {"id": "STSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 1)"}
+    {"id": "STSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "56"}, "freq": 0.25,
   "signals": [
-    {"id": "LGSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 1)"}
+    {"id": "LGSO2FT1", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 1)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "57"}, "freq": 0.25,
   "signals": [
-    {"id": "STSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 2)"}
+    {"id": "STSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Short term secondary O2 sensor fuel trim (bank 2)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "58"}, "freq": 0.25,
   "signals": [
-    {"id": "LGSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 2)"}
+    {"id": "LGSO2FT2", "path": "Engine.Generic", "fmt": { "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "Long term secondary O2 sensor fuel trim (bank 2)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "59"}, "freq": 0.25,
   "signals": [
@@ -579,29 +579,25 @@
     {"id": "EGR_A_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                                                       "unit": "noyes"   }, "name": "Commanded EGR A supported",           "hidden": true},
     {"id": "EGR_A_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR A duty cycle/position"},
     {"id": "EGR_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR A duty cycle/position"},
-    {"id": "EGR_A_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "EGR A error"},
+    {"id": "EGR_A_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR A error"},
     {"id": "EGR_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Commanded EGR B duty cycle/position"},
     {"id": "EGR_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 8, "max": 100,                "mul": 100, "div": 255,              "unit": "percent" }, "name": "Actual EGR B duty cycle/position"},
-    {"id": "EGR_B_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "EGR B error"}
+    {"id": "EGR_B_ERR",     "path": "Engine.Generic",          "fmt": {"bix": 48, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "unit": "percent" }, "name": "EGR B error"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "6B"}, "freq": 0.25,
   "signals": [
-    {"id": "EGRTD_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {           "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor D (Bank 2, Sensor 2) Wide Range supported?", "hidden": true},
-    {"id": "EGRTB_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 1,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor B (Bank 2, Sensor 1) Wide Range supported?", "hidden": true},
-    {"id": "EGRTC_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor C (Bank 1, Sensor 2) Wide Range supported?", "hidden": true},
-    {"id": "EGRTA_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor A (Bank 1, Sensor 1) Wide Range supported?", "hidden": true},
-    {"id": "EGRTD_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor D (Bank 2, Sensor 2) supported?",            "hidden": true},
-    {"id": "EGRTB_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor B (Bank 2, Sensor 1) supported?",            "hidden": true},
-    {"id": "EGRTC_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor C (Bank 1, Sensor 2) supported?",            "hidden": true},
-    {"id": "EGRTA_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                                     "unit": "noyes"   }, "name": "EGR Temperature Sensor A (Bank 1, Sensor 1) supported?",            "hidden": true},
-    {"id": "EGRTA",        "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40,           "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor A (Bank 1, Sensor 1)"},
-    {"id": "EGRTA_WIDE",   "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 980, "min": -40, "mul": 4, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor A (Bank 1, Sensor 1), wide"},
-    {"id": "EGRTC",        "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40,           "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor C (Bank 1, Sensor 2)"},
-    {"id": "EGRTC_WIDE",   "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 980, "min": -40, "mul": 4, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor C (Bank 1, Sensor 2), wide"},
-    {"id": "EGRTB",        "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40,           "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor B (Bank 2, Sensor 1)"},
-    {"id": "EGRTB_WIDE",   "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 980, "min": -40, "mul": 4, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor B (Bank 2, Sensor 1), wide"},
-    {"id": "EGRTD",        "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40,           "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor D (Bank 2, Sensor 2)"},
-    {"id": "EGRTD_WIDE",   "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 980, "min": -40, "mul": 4, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor D (Bank 2, Sensor 2), wide"}
+    {"id": "EGRTD_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {           "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "EGR Temperature Sensor D (Bank 2, Sensor 2) Wide Range supported?", "hidden": true},
+    {"id": "EGRTB_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 1,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "EGR Temperature Sensor B (Bank 2, Sensor 1) Wide Range supported?", "hidden": true},
+    {"id": "EGRTC_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 2,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "EGR Temperature Sensor C (Bank 1, Sensor 2) Wide Range supported?", "hidden": true},
+    {"id": "EGRTA_WR_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 3,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "EGR Temperature Sensor A (Bank 1, Sensor 1) Wide Range supported?", "hidden": true},
+    {"id": "EGRTD_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 4,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "EGR Temperature Sensor D (Bank 2, Sensor 2) supported?",            "hidden": true},
+    {"id": "EGRTB_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 5,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "EGR Temperature Sensor B (Bank 2, Sensor 1) supported?",            "hidden": true},
+    {"id": "EGRTC_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "EGR Temperature Sensor C (Bank 1, Sensor 2) supported?",            "hidden": true},
+    {"id": "EGRTA_SUP",    "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1, "max": 1,                           "unit": "noyes"   }, "name": "EGR Temperature Sensor A (Bank 1, Sensor 1) supported?",            "hidden": true},
+    {"id": "EGRTA",        "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor A (Bank 1, Sensor 1)"},
+    {"id": "EGRTC",        "path": "Engine.Generic",          "fmt": {"bix": 16, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor C (Bank 1, Sensor 2)"},
+    {"id": "EGRTB",        "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor B (Bank 2, Sensor 1)"},
+    {"id": "EGRTD",        "path": "Engine.Generic",          "fmt": {"bix": 32, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Exhaust Gas Recirculation Temp Sensor D (Bank 2, Sensor 2)"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "6C"}, "freq": 0.25,
   "signals": [

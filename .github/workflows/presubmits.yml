@@ -1,4 +1,4 @@
-name: json-yaml-validate 
+name: json-yaml-validate
 on:
   push:
     branches:
@@ -13,17 +13,14 @@ jobs:
   validate-signals:
     runs-on: ubuntu-latest
     steps:
-        # Step 1: Check out the current repository
       - uses: actions/checkout@v4
 
-      # Step 2: Check out the central schema repository
       - name: Checkout schemas repo
         uses: actions/checkout@v4
         with:
           repository: OBDb/.schemas
           path: .schemas
 
-      # Step 3: Validate with schema from the central repository
       - name: Validate signalsets
         id: json-yaml-validate-v3
         uses: GrantBirki/json-yaml-validate@v2.7.1
