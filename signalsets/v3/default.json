@@ -98,7 +98,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0C"}, "freq": 0.25,
   "signals": [
-    {"id": "RPM", "path": "Engine.Generic", "fmt": { "len": 16, "max": 16383.75, "div": 4, "unit": "rpm" }, "name": "Engine RPM"}
+    {"id": "RPM", "path": "Engine.Generic", "fmt": { "len": 16, "max": 16383.75, "div": 4, "nullmax": 16383.5, "unit": "rpm" }, "name": "Engine RPM"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "0D"}, "freq": 0.25,
   "signals": [
