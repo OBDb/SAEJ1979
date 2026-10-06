@@ -17,14 +17,14 @@
     {"id": "EVAP_SUP", "path": "DTCs.Generic.Support", "fmt": {"bix": 21, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Evaporative system monitoring supported"},
     {"id": "HCAT_SUP", "path": "DTCs.Generic.Support", "fmt": {"bix": 22, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Heated catalyst monitoring supported"},
     {"id": "CAT_SUP",  "path": "DTCs.Generic.Support", "fmt": {"bix": 23, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Catalyst monitoring supported"},
-    {"id": "EGR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 24, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "EGR system monitoring ready"},
-    {"id": "HTR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 25, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor heater monitoring ready"},
-    {"id": "O2S_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 26, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Oxygen sensor monitoring ready"},
-    {"id": "ACRF_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 27, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "A/C system refrigerant monitoring ready"},
-    {"id": "AIR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 28, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Secondary air system monitoring ready"},
-    {"id": "EVAP_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 29, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Evaporative system monitoring ready"},
-    {"id": "HCAT_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 30, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Heated catalyst monitoring ready"},
-    {"id": "CAT_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 31, "len": 1, "max": 1,   "unit": "noyes"  }, "name": "Catalyst monitoring ready"},
+    {"id": "EGR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 24, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "EGR system monitoring ready"},
+    {"id": "HTR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 25, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Oxygen sensor heater monitoring ready"},
+    {"id": "O2S_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 26, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Oxygen sensor monitoring ready"},
+    {"id": "ACRF_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 27, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "A/C system refrigerant monitoring ready"},
+    {"id": "AIR_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 28, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Secondary air system monitoring ready"},
+    {"id": "EVAP_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 29, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Evaporative system monitoring ready"},
+    {"id": "HCAT_RDY", "path": "DTCs.Generic.Status",  "fmt": {"bix": 30, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Heated catalyst monitoring ready"},
+    {"id": "CAT_RDY",  "path": "DTCs.Generic.Status",  "fmt": {"bix": 31, "len": 1, "max": 1,   "unit": "yesno"  }, "name": "Catalyst monitoring ready"},
     {"id": "CIM_SUP", "path": "DTCs.Generic.Support", "name": "Compression ignition monitoring supported", "description": "Indicates support of spark ignition or compression ignition monitors.", "hidden": true, "fmt": {"bix": 12, "len": 1, "map": {
           "0": { "description": "Spark ignition monitors supported",       "value": "SPARK" },
           "1": { "description": "Compression ignition monitors supported", "value": "COMPRESSION" }
@@ -38,7 +38,7 @@
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "03"}, "freq": 0.25,
   "signals": [
     {"id": "FUELSYS1", "path": "Fuel.Generic", "name": "Fuel system 1 status", "fmt": {"len": 8, "map": {
-          "0":   { "description": "Engine is off",                                                                                                        "value": "OFF" },
+          "0":   { "description": "No status: the engine is off, or this fuel system is inactive (e.g. cylinder-bank deactivation)",                      "value": "OFF" },
           "1":   { "description": "Open loop - has not yet satisfied conditions to go closed loop",                                                       "value": "OL" },
           "2":   { "description": "Closed loop - using oxygen sensor(s) as feedback for fuel control",                                                    "value": "CL" },
           "4":   { "description": "Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)",                                 "value": "OL-Drive" },
@@ -46,11 +46,12 @@
           "16":  { "description": "Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control",          "value": "CL-Fault" },
           "32":  { "description": "Open loop - has not yet satisfied conditions to go closed loop (Bank 2)",                                              "value": "OL B2" },
           "64":  { "description": "Open loop due to driving conditions (Bank 2) (e.g. power enrichment, deceleration enleanment, cylinder deactivation)", "value": "OL-Drive B2" },
+          "68":  { "description": "Open loop due to driving conditions on both banks (e.g. deceleration fuel cut)",                                       "value": "OL-Drive B1+B2" },
           "128": { "description": "Open loop - due to detected system fault (Bank 2)",                                                                    "value": "OL-Fault B2" }
         }}
     },
     {"id": "FUELSYS2", "path": "Fuel.Generic", "name": "Fuel system 2 status", "fmt": {"bix": 8, "len": 8, "map": {
-          "0":   { "description": "Engine is off",                                                                                                        "value": "OFF" },
+          "0":   { "description": "No status: no second fuel system, one that is inactive (dual injection, cylinder deactivation), or engine off",        "value": "OFF" },
           "1":   { "description": "Open loop - has not yet satisfied conditions to go closed loop",                                                       "value": "OL" },
           "2":   { "description": "Closed loop - using oxygen sensor(s) as feedback for fuel control",                                                    "value": "CL" },
           "4":   { "description": "Open loop due to driving conditions (e.g. power enrichment, deceleration enleanment)",                                 "value": "OL-Drive" },
@@ -58,6 +59,7 @@
           "16":  { "description": "Closed loop, but fault with at least one oxygen sensor - may be using single oxygen sensor for fuel control",          "value": "CL-Fault" },
           "32":  { "description": "Open loop - has not yet satisfied conditions to go closed loop (Bank 2)",                                              "value": "OL B2" },
           "64":  { "description": "Open loop due to driving conditions (Bank 2) (e.g. power enrichment, deceleration enleanment, cylinder deactivation)", "value": "OL-Drive B2" },
+          "68":  { "description": "Open loop due to driving conditions on both banks (e.g. deceleration fuel cut)",                                       "value": "OL-Drive B1+B2" },
           "128": { "description": "Open loop - due to detected system fault (Bank 2)",                                                                    "value": "OL-Fault B2" }
         }}
     }
@@ -143,23 +145,23 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "14"}, "freq": 1,
   "signals": [
-    {"id": "O2S11",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 1, Sensor 1"},
-    {"id": "SHRTFT11", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "SHRTFT associated with O2S11"}
+    {"id": "O2S11",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,                               "unit": "volts"   }, "name": "O2S Output Voltage Bank 1, Sensor 1"},
+    {"id": "SHRTFT11", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "nullmax": 99.2, "unit": "percent" }, "name": "SHRTFT associated with O2S11",        "description": "Short-term fuel trim using this sensor. 0xFF (no value) means the sensor is not used for fuel trim."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "15"}, "freq": 1,
   "signals": [
-    {"id": "O2S12",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 1, Sensor 2"},
-    {"id": "SHRTFT11", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "SHRTFT associated with O2S12"}
+    {"id": "O2S12",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,                               "unit": "volts"   }, "name": "O2S Output Voltage Bank 1, Sensor 2"},
+    {"id": "SHRTFT12", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "nullmax": 99.2, "unit": "percent" }, "name": "SHRTFT associated with O2S12",        "description": "Short-term fuel trim using this sensor. 0xFF (no value) means the sensor is not used for fuel trim."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "18"}, "freq": 1,
   "signals": [
-    {"id": "O2S21",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 2, Sensor 1"},
-    {"id": "SHRTFT21", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "SHRTFT associated with O2S21"}
+    {"id": "O2S21",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,                               "unit": "volts"   }, "name": "O2S Output Voltage Bank 2, Sensor 1"},
+    {"id": "SHRTFT21", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "nullmax": 99.2, "unit": "percent" }, "name": "SHRTFT associated with O2S21",        "description": "Short-term fuel trim using this sensor. 0xFF (no value) means the sensor is not used for fuel trim."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "19"}, "freq": 1,
   "signals": [
-    {"id": "O2S22",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,              "unit": "volts"   }, "name": "O2S Output Voltage Bank 2, Sensor 2"},
-    {"id": "SHRTFT22", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -128, "unit": "percent" }, "name": "SHRTFT associated with O2S22"}
+    {"id": "O2S22",    "path": "Engine.Generic.OxygenSensors", "fmt": {          "len": 8, "max": 1.275,                          "div": 200,                               "unit": "volts"   }, "name": "O2S Output Voltage Bank 2, Sensor 2"},
+    {"id": "SHRTFT22", "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 8, "len": 8, "max": 99.22, "min": -100, "mul": 100, "div": 128, "add": -100, "nullmax": 99.2, "unit": "percent" }, "name": "SHRTFT associated with O2S22",        "description": "Short-term fuel trim using this sensor. 0xFF (no value) means the sensor is not used for fuel trim."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "1C"}, "freq": 3600,
   "signals": [
@@ -298,6 +300,11 @@
     {"id": "LAMBDA11_CURRENT", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,                 "div": 32768,              "unit": "scalar"    }, "name": "Lambda value, Equivalence Ratio Bank 1, Sensor 1",   "suggestedMetric": "o2Lambda"},
     {"id": "O2S11_CURRENT",    "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 16, "len": 16, "max": 127.996, "min": -128, "div": 256,   "add": -128, "unit": "milliamps" }, "name": "Wide Range O2S Current, O2 Sensor Bank 1, Sensor 1"}
   ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "38"}, "freq": 0.25,
+  "signals": [
+    {"id": "LAMBDA21_CURRENT", "path": "Engine.Generic.OxygenSensors", "fmt": {           "len": 16, "max": 1.99,                 "div": 32768,              "unit": "scalar"    }, "name": "Lambda value, Equivalence Ratio Bank 2, Sensor 1",   "description": "Wide-range oxygen sensor 5: bank 2, sensor 1 on engines that report sensor locations with 01 13 (bank 3, sensor 1 with 01 1D)."},
+    {"id": "O2S21_CURRENT",    "path": "Engine.Generic.OxygenSensors", "fmt": {"bix": 16, "len": 16, "max": 127.996, "min": -128, "div": 256,   "add": -128, "unit": "milliamps" }, "name": "Wide Range O2S Current, O2 Sensor Bank 2, Sensor 1"}
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "3C"}, "freq": 0.25,
   "signals": [
     {"id": "CATEMP11", "path": "Engine.Generic", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 1, sensor 1"}
@@ -346,7 +353,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "42"}, "freq": 10,
   "signals": [
-    {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "suggestedMetric": "starterBatteryVoltage", "description": "Power input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module."}
+    {"id": "VPWR", "path": "Battery.Generic", "fmt": { "len": 16, "max": 65535, "div": 1000, "nullmin": 1, "unit": "volts" }, "name": "Control module voltage", "suggestedMetric": "starterBatteryVoltage", "description": "Power input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "43"}, "freq": 0.25,
   "signals": [
@@ -354,7 +361,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "44"}, "freq": 0.25,
   "signals": [
-    {"id": "EQ_RAT", "path": "Engine.Generic", "fmt": { "len": 16, "max": 1.99, "mul": 2, "div": 65535, "unit": "scalar" }, "name": "Commanded equivalence ratio", "suggestedMetric": "commandedLambda", "description": "Fuel systems that utilize conventional oxygen sensor display the inverse of the commanded open loop equivalence ratio (also known as lambda) while the fuel control system is in open loop. Will indicate 1.000 while in closed-loop fuel."}
+    {"id": "EQ_RAT", "path": "Engine.Generic", "fmt": { "len": 16, "max": 1.99, "mul": 2, "div": 65535, "unit": "scalar" }, "name": "Commanded equivalence ratio", "suggestedMetric": "commandedLambda", "description": "Commanded equivalence ratio (lambda): commanded air-fuel ratio = stoichiometric ratio x this value. Fuel systems with conventional oxygen sensors report the commanded ratio in open loop and 1.000 in closed loop. Systems with wide-range (linear) sensors report the commanded ratio in both, so gasoline engines may read slightly off 1.000 in closed loop; diesel and lean-burn engines read well above 1."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "45"}, "freq": 0.25,
   "signals": [
@@ -475,7 +482,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "59"}, "freq": 0.25,
   "signals": [
-    {"id": "FRP_ABS", "path": "Engine.Generic", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kilopascal" }, "name": "Fuel rail pressure (absolute)", "description": "Fuel rail pressure at the engine when the reading is referenced to atmosphere (gage pressure)."}
+    {"id": "FRP_ABS", "path": "Engine.Generic", "fmt": { "len": 16, "max": 655350, "mul": 10, "unit": "kilopascal" }, "name": "Fuel rail pressure (absolute)", "description": "Fuel rail pressure at the engine, referenced to vacuum (absolute pressure)."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "5A"}, "freq": 0.25,
   "signals": [
