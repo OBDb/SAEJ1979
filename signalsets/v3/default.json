@@ -346,9 +346,9 @@
   "signals": [
     {"id": "EVAP_VP", "path": "Engine.Generic", "fmt": { "len": 16, "max": 8191.75, "min": -8192, "div": 4000, "sign": true, "unit": "kilopascal" }, "name": "Evap system vapor pressure", "description": "The pressure signal is normally obtained from a sensor located in the fuel tank or a sensor in an evaporative system vapor line."}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "33"}, "freq": 0.25,
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"01": "33"}, "freq": 5,
   "signals": [
-    {"id": "BARO", "path": "Engine.Generic", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure", "description": "Normally obtained from one of a dedicated barometric sensor, a MAP sensor at key-on and during certain modes of driving, or inferred from a MAF sensor and other inputs during certain modes of driving. The control module reports BARO from whatever source it is derived from."}
+    {"id": "BARO", "path": "Engine.Generic", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure", "suggestedMetric": "barometricPressure", "description": "Normally obtained from one of a dedicated barometric sensor, a MAP sensor at key-on and during certain modes of driving, or inferred from a MAF sensor and other inputs during certain modes of driving. The control module reports BARO from whatever source it is derived from."}
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"01": "34"}, "freq": 0.25,
   "signals": [
@@ -748,16 +748,16 @@
     {"id": "BP_A_ACT_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 6,  "len": 1,  "max": 1,                     "unit": "noyes"      }, "name": "Boost pressure A supported",                "hidden": true},
     {"id": "BP_A_CMD_SUP", "path": "Engine.Generic.Internal", "fmt": {"bix": 7,  "len": 1,  "max": 1,                     "unit": "noyes"      }, "name": "Commanded boost pressure A supported",      "hidden": true},
     {"id": "BP_A_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 8,  "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Commanded boost pressure A",                "description": "Turbocharger/supercharger A commanded boost pressure."},
-    {"id": "BP_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Boost pressure sensor A",                   "description": "Actual turbocharger/supercharger A boost pressure."},
+    {"id": "BP_A_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 24, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Boost pressure sensor A",                   "suggestedMetric": "absoluteBoostPressure",                             "description": "Actual turbocharger/supercharger A boost pressure."},
     {"id": "BP_B_CMD",     "path": "Engine.Generic",          "fmt": {"bix": 40, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Commanded boost pressure B",                "description": "Turbocharger/supercharger B commanded boost pressure."},
     {"id": "BP_B_ACT",     "path": "Engine.Generic",          "fmt": {"bix": 56, "len": 16, "max": 2047.96875, "div": 32, "unit": "kilopascal" }, "name": "Boost pressure sensor B",                   "description": "Actual turbocharger/supercharger B boost pressure."},
-    {"id": "BP_B", "path": "Engine.Generic.Internal", "name": "Boost bressure A control status", "fmt": {"bix": 76, "len": 2, "map": {
+    {"id": "BP_B", "path": "Engine.Generic.Internal", "name": "Boost pressure B control status", "fmt": {"bix": 76, "len": 2, "map": {
           "1": { "description": "Open loop",   "value": "BP_B_OL" },
           "2": { "description": "Closed loop", "value": "BP_B_CL" },
           "3": { "description": "Fault",       "value": "BP_B_FAULT" }
         }}
     },
-    {"id": "BP_A", "path": "Engine.Generic.Internal", "name": "Boost bressure A control status", "fmt": {"bix": 78, "len": 2, "map": {
+    {"id": "BP_A", "path": "Engine.Generic.Internal", "name": "Boost pressure A control status", "fmt": {"bix": 78, "len": 2, "map": {
           "1": { "description": "Open loop",   "value": "BP_A_OL" },
           "2": { "description": "Closed loop", "value": "BP_A_CL" },
           "3": { "description": "Fault",       "value": "BP_A_FAULT" }
